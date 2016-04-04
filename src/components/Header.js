@@ -9,7 +9,7 @@ export default class Explore extends React.Component {
   render() {
     return (
       <div>
-        <Link to="/recent">Recent</Link>
+        <Link to="/">Recent</Link>
         <Link to="/albums">Albums</Link>
         <Link to="/tracks">Tracks</Link>
         <Link to="/artists">Artists</Link>
