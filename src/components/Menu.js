@@ -10,8 +10,11 @@ export default class Explore extends React.Component {
     return (
       <nav>
         <Link to="/">Recent</Link>
+        {' '}
         <Link to="/albums">Albums</Link>
+        {' '}
         <Link to="/tracks">Tracks</Link>
+        {' '}
         <Link to="/artists">Artists</Link>
       </nav>
     );

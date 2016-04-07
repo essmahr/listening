@@ -1,9 +1,28 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { loadTopArtists } from '../actions';
 
-export default class TopArtists extends React.Component {
+import TopArtistsList from '../components/TopArtistsList';
+
+class TopArtistsPage extends React.Component {
+  componentWillMount() {
+    this.props.loadTopArtists();
+  }
+
   render() {
+    console.log(this.props);
     return (
-      <h1>Top Artists</h1>
+      <TopArtistsList artists={this.props.topArtists} />
     );
   }
 }
+
+function mapStateToProps(state, ownProps) {
+  return {
+    topArtists: state.entities.topArtists,
+  }
+}
+
+export default connect(mapStateToProps, {
+  loadTopArtists
+})(TopArtistsPage)

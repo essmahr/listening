@@ -1,9 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { loadTopTracks } from '../actions';
 
-export default class TopTracks extends React.Component {
+import TopTrackList from '../components/TopTrackList';
+
+class TopTracksPage extends React.Component {
+  componentWillMount() {
+    this.props.loadTopTracks();
+  }
+
   render() {
     return (
-      <h1>Top TopTracks</h1>
+      <TopTrackList tracks={this.props.topTracks} />
     );
   }
 }
+
+function mapStateToProps(state, ownProps) {
+  return {
+    topTracks: state.entities.topTracks,
+  }
+}
+
+export default connect(mapStateToProps, {
+  loadTopTracks
+})(TopTracksPage)

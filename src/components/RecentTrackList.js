@@ -1,14 +1,14 @@
 import React from 'react';
 
-import TrackListItem from './TrackListItem';
+import RecentTrackListItem from './RecentTrackListItem';
 
-class TrackList extends React.Component {
+class RecentTrackList extends React.Component {
   render() {
 
     const tracks = this.props.tracks.map((track, idx) => {
       if (track.date === undefined) return;
 
-      return (<TrackListItem
+      return (<RecentTrackListItem
                 key={idx}
                 name={track.name}
                 artist={track.artist.name}
@@ -25,8 +25,8 @@ class TrackList extends React.Component {
   }
 }
 
-TrackList.propTypes = {
+RecentTrackList.propTypes = {
   tracks: React.PropTypes.array
 }
 
-export default TrackList;
+export default RecentTrackList;

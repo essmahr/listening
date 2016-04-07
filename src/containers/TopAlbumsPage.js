@@ -1,9 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { loadTopAlbums } from '../actions';
 
-export default class TopAlbums extends React.Component {
+import AlbumList from '../components/AlbumList';
+
+class TopAlbumsPage extends React.Component {
+  componentWillMount() {
+    this.props.loadTopAlbums();
+  }
+
   render() {
     return (
-      <h1>Top Albums</h1>
+      <AlbumList albums={this.props.topAlbums} />
     );
   }
 }
+
+function mapStateToProps(state, ownProps) {
+  return {
+    topAlbums: state.entities.topAlbums,
+  }
+}
+
+export default connect(mapStateToProps, {
+  loadTopAlbums
+})(TopAlbumsPage);

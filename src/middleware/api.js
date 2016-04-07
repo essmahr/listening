@@ -23,6 +23,18 @@ function santizeResponse(json, endpoint) {
       return {
         recentTracks: json.recenttracks.track
       }
+    case 'user.gettopalbums':
+      return {
+        topAlbums: json.topalbums.album
+      }
+    case 'user.gettoptracks':
+      return {
+        topTracks: json.toptracks.track
+      }
+    case 'user.gettopartists':
+      return {
+        topArtists: json.topartists.artist
+      }
     default:
       return json;
   }

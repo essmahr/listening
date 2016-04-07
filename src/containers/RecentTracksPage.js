@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { loadRecentTracks } from '../actions';
 
-import TrackList from '../components/TrackList';
+import RecentTrackList from '../components/RecentTrackList';
 
 class RecentTracksPage extends React.Component {
   componentWillMount() {
@@ -11,7 +11,7 @@ class RecentTracksPage extends React.Component {
 
   render() {
     return (
-      <TrackList tracks={this.props.recentTracks} />
+      <RecentTrackList tracks={this.props.recentTracks} />
     );
   }
 }
