@@ -5,6 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const merge = require('webpack-merge');
 
+var postcssImport = require('postcss-import');
+const cssNext = require('postcss-cssnext');
+
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -16,7 +19,7 @@ process.env.BABEL_ENV = TARGET;
 const common = {
   entry: PATHS.src,
   resolve: {
-    extensions: ['', '.js', '.jsx', '.scss']
+    extensions: ['', '.js', '.jsx', '.css']
   },
   module: {
     loaders: [
@@ -30,10 +33,18 @@ const common = {
         include: PATHS.src
       },
       {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        test: /\.css$/,
+        loaders: ["style", "css", "postcss"]
       }
     ]
+  },
+  postcss: function(webpack) {
+    return [
+      postcssImport({
+        addDependencyTo: webpack,
+      }),
+      cssNext({})
+    ];
   },
   plugins: [
     new HtmlWebpackPlugin({

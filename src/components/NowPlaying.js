@@ -10,10 +10,10 @@ export default class NowPlaying extends React.Component {
     const {name, artist} = this.props.track;
 
     return (
-      <div>
-        <h5>Now Playing</h5>
-        <h1>{name}</h1>
-        <h2>{artist.name}</h2>
+      <div className="now-playing">
+        <h5 className="now-playing-label">Now Playing</h5>
+        <h1 className="now-playing-song">{name}</h1>
+        <h2 className="now-playing-artist">{artist.name}</h2>
       </div>
     );
   }

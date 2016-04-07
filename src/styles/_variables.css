@@ -1,0 +1,7 @@
+:root {
+  --titleFont: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  --bodyFont: 'Roboto Mono', monospace;
+
+  --bodyColor: #444;
+  --greyLight: #FAFAFA;
+}
