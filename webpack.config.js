@@ -16,7 +16,7 @@ process.env.BABEL_ENV = TARGET;
 const common = {
   entry: PATHS.src,
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.scss']
   },
   module: {
     loaders: [
@@ -28,6 +28,10 @@ const common = {
           presets: ['react', 'es2015', 'stage-0']
         },
         include: PATHS.src
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
       }
     ]
   },
