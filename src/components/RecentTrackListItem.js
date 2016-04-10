@@ -1,24 +1,24 @@
 import React from 'react';
+import TimeAgo from 'react-timeago';
+import smarten from '../lib/smarten'
 
 class RecentTrackListItem extends React.Component {
   render() {
-
     const classNames = ['list-item', 'recent-tracks-list-item'];
+    const timestamp = parseInt(this.props.date, 10) * 1000;
 
-    if (this.props.firstOfAlbum) {
-      classNames.push('first-of-type');
-    }
+    if (this.props.firstOfAlbum) { classNames.push('first-of-type'); }
 
     return (
       <li className={classNames.join(' ')}>
-        <h2 className="recent-track-artist">{this.props.artist}</h2>
+        <div className="recent-track-artist">{this.props.artist}</div>
         <div className="recent-track-song">
-          <h1 className="recent-track-song-title">{this.props.name}</h1>
-          <div className="recent-track-album">
-            <strong>{this.props.album['#text']}</strong>
-          </div>
+          <span className="recent-track-song-title">{smarten(this.props.name)}</span>
+          <div className="recent-track-album">{this.props.album['#text']}</div>
         </div>
-        <span className="recent-track-timestamp">{this.props.date}</span>
+        <span className="recent-track-timestamp">
+          <TimeAgo date={timestamp}/>
+        </span>
       </li>
     )
   }

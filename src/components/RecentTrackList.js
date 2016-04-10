@@ -8,8 +8,6 @@ class RecentTrackList extends React.Component {
     const tracks = this.props.tracks.map((track, idx) => {
       if (track.date === undefined) return;
 
-      console.log()
-
       const isFirstOfAlbum = idx !== 0 && track.album['#text'] !== this.props.tracks[idx - 1].album['#text'];
 
       return (<RecentTrackListItem
@@ -27,7 +25,7 @@ class RecentTrackList extends React.Component {
         <header className="section-header">
           <h1 className="section-title">Recent Tracks</h1>
         </header>
-        <ul className="list tracks-list">
+        <ul className="list recent-tracks-list">
           {tracks}
         </ul>
       </section>

@@ -3,7 +3,7 @@ import React from 'react';
 class TopArtistsListItem extends React.Component {
   render() {
     return (
-      <li>
+      <li className="list-item top-artists-list-item">
         <h1>{this.props.name}</h1>
       </li>
     )

@@ -15,9 +15,14 @@ class TopTrackList extends React.Component {
     });
 
     return (
-      <ul className="list tracks-list">
-        {tracks}
-      </ul>
+      <section className="section">
+        <header className="section-header">
+          <h1 className="section-title">Top Tracks</h1>
+        </header>
+        <ul className="list top-tracks-list">
+          {tracks}
+        </ul>
+      </section>
     );
   }
 }

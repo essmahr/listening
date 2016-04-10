@@ -2,7 +2,7 @@
 @lost flexbox flex;
 
 :root {
-  --titleFont: "Eb Garamond", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  --titleFont: "Inknut Antiqua", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
   --bodyFont: 'Roboto Mono', monospace;
 
   --bodyColor: #444;
