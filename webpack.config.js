@@ -5,8 +5,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const merge = require('webpack-merge');
 
-var postcssImport = require('postcss-import');
+const postcssImport = require('postcss-import');
+const cssExtend = require('postcss-extend');
 const cssNext = require('postcss-cssnext');
+const lostGrid = require('lost');
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
@@ -43,7 +45,9 @@ const common = {
       postcssImport({
         addDependencyTo: webpack,
       }),
-      cssNext({})
+      cssExtend(),
+      cssNext({}),
+      lostGrid()
     ];
   },
   plugins: [
