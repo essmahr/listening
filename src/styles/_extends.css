@@ -1,0 +1,15 @@
+@define-placeholder text-large {
+  font-size: calc(1em * 48 / 16);
+  font-family: var(--titleFont);
+  font-weight: 500;
+}
+
+@define-placeholder text-medium {
+  font-size: calc(1em * 24 / 16);
+  font-family: var(--titleFont);
+  font-weight: 500;
+}
+
+@define-placeholder text-small {
+  font-size: calc(1em * 14 / 16);
+}

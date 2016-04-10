@@ -1,7 +1,13 @@
+@lost gutter 0px;
+@lost flexbox flex;
+
 :root {
-  --titleFont: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  --titleFont: "Eb Garamond", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
   --bodyFont: 'Roboto Mono', monospace;
 
   --bodyColor: #444;
   --greyLight: #FAFAFA;
+  --maxWidth: 1020px;
+
+  --borderColor: #E0E0E0;
 }

@@ -1,0 +1,53 @@
+.site-header {
+  margin-bottom: 40px;
+}
+
+
+/*  Now Playing */
+
+.now-playing {
+  padding: 2em 0;
+  background: var(--greyLight);
+}
+
+.now-playing-wrapper {
+
+}
+
+.now-playing-label {
+  @extend text-small;
+  opacity: 0.6;
+}
+
+
+.now-playing-song {
+  @extend text-medium;
+  margin-top: 10px;
+
+
+  & .sep {
+    display: inline-block;
+    margin: 0 6px;
+  }
+}
+
+
+/* Menu */
+
+.menu {
+  lost-center: var(--maxWidth);
+  border-bottom: 2px solid var(--greyLight);
+}
+
+.menu-link {
+  @extend text-small;
+  lost-column: 1/4;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 10px 0;
+
+  &:hover {
+    background: var(--greyLight);
+  }
+}

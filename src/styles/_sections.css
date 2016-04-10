@@ -1,0 +1,11 @@
+.section {
+  lost-center: var(--maxWidth) no-flex;
+  padding: 0 20px;
+}
+
+.section-header {}
+
+.section-title {
+  @extend text-large;
+  opacity: 0.6;
+}

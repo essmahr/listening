@@ -2,10 +2,23 @@ import React from 'react';
 
 class RecentTrackListItem extends React.Component {
   render() {
+
+    const classNames = ['list-item', 'recent-tracks-list-item'];
+
+    if (this.props.firstOfAlbum) {
+      classNames.push('first-of-type');
+    }
+
     return (
-      <li>
-        <h1>{this.props.name}</h1>
-        <h2>{this.props.artist}</h2>
+      <li className={classNames.join(' ')}>
+        <h2 className="recent-track-artist">{this.props.artist}</h2>
+        <div className="recent-track-song">
+          <h1 className="recent-track-song-title">{this.props.name}</h1>
+          <div className="recent-track-album">
+            <strong>{this.props.album['#text']}</strong>
+          </div>
+        </div>
+        <span className="recent-track-timestamp">{this.props.date}</span>
       </li>
     )
   }
@@ -13,7 +26,8 @@ class RecentTrackListItem extends React.Component {
 
 RecentTrackListItem.proptypes = {
   artist: React.PropTypes.string,
-  album: React.PropTypes.object
+  album: React.PropTypes.object,
+  date: React.PropTypes.string,
 }
 
 export default RecentTrackListItem;

@@ -1,0 +1,47 @@
+.tracks-list {}
+
+.recent-track-artist {
+  lost-column: 2.5/12;
+  /* @extend text-medium; */
+  font-size: 14px;
+}
+
+.recent-track-song {
+  lost-column: 7.5/12;
+}
+
+.recent-track-song-title {
+  @extend text-medium;
+}
+
+.recent-track-album {
+  font-size: 9px;
+  font-weight: 400;
+  opacity: 0.6;
+
+  & strong {
+    font-weight: inherit;
+    font-style: italic;
+  }
+}
+
+.recent-track-timestamp {
+  lost-column: 2/12;
+  text-align: right;
+}
+
+.list {
+  margin: 10px 0;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.list-item {
+  lost-flex-container: row;
+  align-items: center;
+  border-top: 1px solid var(--borderColor);
+  padding: 16px 0;
+
+  &.first-of-type {
+    border-top-width: 3px;
+  }
+}
