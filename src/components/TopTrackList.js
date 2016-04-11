@@ -6,11 +6,15 @@ class TopTrackList extends React.Component {
   render() {
 
     const tracks = this.props.tracks.map((track, idx) => {
+      const rank = track['@attr'].rank;
+
       return (<TopTrackListItem
                 key={idx}
-                name={track.name}
+                track={track.name}
                 artist={track.artist.name}
                 album={track.album}
+                count={track.playcount}
+                rank={rank}
               />);
     });
 

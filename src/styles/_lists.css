@@ -65,20 +65,20 @@
 .top-albums-rank {
   @extend rank-number;
   position: absolute;
-  font-size: calc(1em * 40 / 16);
+  font-size: calc(1em * 48 / 16);
   font-weight: 100;
   left: 0;
   right: 0;
   top: 50%;
   line-height: 1;
-  margin-top: -20px;
+  margin-top: -24px;
   text-align: center;
   color: #FFF;
   font-weight: 400;
 }
 
 .top-albums-cover-column {
-  lost-column: 3/12;
+  lost-column: 2/12;
 }
 
 .top-album-name {
@@ -91,20 +91,50 @@
 }
 
 .top-albums-info-column {
-  lost-column: 9/12;
+  lost-column: 8/12;
 }
 
 .top-albums-playcount {
   margin-top: 2px;
 }
 
-.top-albums-playcount-count {
-
-}
+.top-albums-playcount-count {}
 
 .top-albums-playcount-label {
   text-transform: uppercase;
   font-size: 10px;
   letter-spacing: 0.1em;
   font-weight: 400;
+}
+
+
+/* ----- Top Tracks ---- */
+
+.top-tracks-list-item {
+  align-items: center;
+}
+
+.top-track-rank-column {
+  lost-column: 36px;
+}
+
+.top-track-rank {
+  font-size: 24px;
+}
+
+.top-track-info-column {
+  flex: 1;
+}
+
+.top-track-playcount-column {
+  lost-column: 3/12;
+  text-align: right;
+}
+
+.top-track-name {
+  @extend header-3;
+}
+
+.top-track-artist {
+  /* @extend header-4; */
 }

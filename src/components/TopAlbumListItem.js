@@ -15,8 +15,8 @@ class AlbumListItem extends React.Component {
           </ImageLoader>
         </div>
         <div className="top-albums-info-column">
-          <h1 className="top-album-name">{album.name}</h1>
           <h2 className="top-album-artist">{album.artist.name}</h2>
+          <h1 className="top-album-name">{album.name}</h1>
           <div className="top-albums-playcount">
             <strong className="top-albums-playcount-count">{album.playcount}</strong>
             <span className="top-albums-playcount-label"> Plays</span>
