@@ -38,7 +38,7 @@ img {
   padding: 50% 0;
   background-color: color(var(--accentColor) alpha(80%));
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .img-loader-img {
@@ -50,7 +50,7 @@ img {
   opacity: 0;
   transition: all 0.5s ease;
   filter: grayscale(20%);
-  border-radius: 5px;
+  border-radius: 3px;
 
   @nest .img-loaded & {
     opacity: 0.6;

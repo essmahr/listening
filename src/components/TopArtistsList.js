@@ -6,9 +6,12 @@ class TopArtistsList extends React.Component {
   render() {
 
     const artists = this.props.artists.map((artist, idx) => {
+      const rank = artist['@attr'].rank;
       return (<TopArtistsListItem
                 key={idx}
                 name={artist.name}
+                rank={rank}
+                count={artist.playcount}
               />);
     });
 

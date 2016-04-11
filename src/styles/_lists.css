@@ -135,6 +135,32 @@
   @extend header-3;
 }
 
-.top-track-artist {
-  /* @extend header-4; */
+.top-track-artist {}
+
+
+/* ----- Top Artists ---- */
+
+.top-artists-list-item {
+  align-items: center;
+}
+
+.top-artist-rank-column {
+  lost-column: 36px;
+}
+
+.top-artist-rank {
+  font-size: 24px;
+}
+
+.top-artist-info-column {
+  flex: 1;
+}
+
+.top-artist-playcount-column {
+  lost-column: 3/12;
+  text-align: right;
+}
+
+.top-artist-name {
+  @extend header-2;
 }
