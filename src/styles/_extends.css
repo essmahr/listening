@@ -1,15 +1,31 @@
-@define-placeholder text-large {
+@define-placeholder header-1 {
   font-size: calc(1em * 36 / 16);
   font-family: var(--titleFont);
   font-weight: 400;
   letter-spacing: -0.02em;
 }
 
-@define-placeholder text-medium {
+@define-placeholder header-2 {
+  font-size: calc(1em * 26 / 16);
+  font-family: var(--titleFont);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+@define-placeholder header-3 {
   font-size: calc(1em * 18 / 16);
   font-family: var(--titleFont);
   font-weight: 300;
   letter-spacing: -0.02em;
+}
+
+@define-placeholder header-4 {
+  font-size: calc(1em * 18 / 16);
+  font-weight: 400;
+}
+
+@define-placeholder rank-number {
+
 }
 
 @define-placeholder text-small {

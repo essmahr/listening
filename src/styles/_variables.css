@@ -1,4 +1,4 @@
-@lost gutter 0px;
+@lost gutter 32px;
 @lost flexbox flex;
 
 :root {
@@ -7,6 +7,9 @@
 
   --bodyColor: #444;
   --greyLight: #FAFAFA;
+
+  --accentColor: #DC5B6B;
+
   --maxWidth: 1020px;
 
   --borderColor: #E0E0E0;

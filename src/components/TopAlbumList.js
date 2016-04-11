@@ -6,7 +6,8 @@ class AlbumList extends React.Component {
   render() {
 
     const albums = this.props.albums.map((album, idx) => {
-      return (<AlbumListItem key={idx} name={album.name} />);
+      const rank = album['@attr'].rank;
+      return (<AlbumListItem key={idx} album={album} rank={rank} />);
     });
 
     return (

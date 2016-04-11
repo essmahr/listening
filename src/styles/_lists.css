@@ -1,17 +1,34 @@
-.tracks-list {}
+.list {
+  margin: 10px 0;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.list-item {
+  lost-flex-container: row;
+  align-items: top;
+  border-top: 1px solid var(--borderColor);
+  padding: 16px 0;
+
+  &.first-of-type {
+    border-top-width: 3px;
+  }
+}
+
+
+/* ----- Recent Tracks ---- */
 
 .recent-track-artist {
-  lost-column: 2.25/12;
-  @extend text-medium;
+  lost-column: 3/12;
+  @extend header-3;
   opacity: 0.6;
 }
 
 .recent-track-song {
-  lost-column: 7.75/12;
+  lost-column: 7/12;
 }
 
-.recent-track-song-title {
-  @extend text-medium;
+.recent-track-title {
+  @extend header-3;
 }
 
 .recent-track-artist {
@@ -33,18 +50,61 @@
   line-height: 38px;
 }
 
-.list {
-  margin: 10px 0;
-  border-bottom: 1px solid var(--borderColor);
+
+/* ----- Top Albums ---- */
+
+.top-albums-list-item {
+  align-items: center;
+  padding: 24px 0;
 }
 
-.list-item {
-  lost-flex-container: row;
-  align-items: top;
-  border-top: 1px solid var(--borderColor);
-  padding: 16px 0;
+.top-albums-rank-image {
+  position: relative;
+}
 
-  &.first-of-type {
-    border-top-width: 3px;
-  }
+.top-albums-rank {
+  @extend rank-number;
+  position: absolute;
+  font-size: calc(1em * 40 / 16);
+  font-weight: 100;
+  left: 0;
+  right: 0;
+  top: 50%;
+  line-height: 1;
+  margin-top: -20px;
+  text-align: center;
+  color: #FFF;
+  font-weight: 400;
+}
+
+.top-albums-cover-column {
+  lost-column: 3/12;
+}
+
+.top-album-name {
+  @extend header-2;
+}
+
+.top-album-artist {
+  @extend header-4;
+  opacity: 0.6;
+}
+
+.top-albums-info-column {
+  lost-column: 9/12;
+}
+
+.top-albums-playcount {
+  margin-top: 2px;
+}
+
+.top-albums-playcount-count {
+
+}
+
+.top-albums-playcount-label {
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  font-weight: 400;
 }

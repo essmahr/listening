@@ -21,7 +21,7 @@
 
 
 .now-playing-song {
-  @extend text-medium;
+  @extend header-2;
   margin-top: 10px;
 
 
