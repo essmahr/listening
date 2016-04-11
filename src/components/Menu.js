@@ -8,12 +8,14 @@ export default class Explore extends React.Component {
 
   render() {
     return (
-      <nav className="menu">
-        <Link className="menu-link" to="/">Recent</Link>
-        <Link className="menu-link" to="/albums">Albums</Link>
-        <Link className="menu-link" to="/tracks">Tracks</Link>
-        <Link className="menu-link" to="/artists">Artists</Link>
-      </nav>
+      <div className="container">
+        <nav className="menu">
+          <Link className="menu-link" to="/">Recent</Link>
+          <Link className="menu-link" to="/albums">Albums</Link>
+          <Link className="menu-link" to="/tracks">Tracks</Link>
+          <Link className="menu-link" to="/artists">Artists</Link>
+        </nav>
+      </div>
     );
   }
 }

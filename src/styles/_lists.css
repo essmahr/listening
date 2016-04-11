@@ -24,7 +24,7 @@
 }
 
 .recent-track-song {
-  lost-column: 7/12;
+  lost-column: 6/12;
 }
 
 .recent-track-title {
@@ -44,9 +44,9 @@
 }
 
 .recent-track-timestamp {
-  lost-column: 2/12;
+  lost-column: 3/12;
   text-align: right;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 38px;
 }
 
@@ -62,8 +62,38 @@
   position: relative;
 }
 
+
+.img-loader-container {
+  position: relative;
+  padding: 50% 0;
+  background-color: color(var(--accentColor) alpha(80%));
+  overflow: hidden;
+  border-radius: 3px;
+
+  &.no-image {
+    background: none;
+    border: 2px solid var(--borderColor);
+  }
+}
+
+.img-loader-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  transition: all 0.5s ease;
+  filter: grayscale(20%);
+  border-radius: 3px;
+
+  @nest .img-loaded & {
+    opacity: 0.6;
+    mix-blend-mode: multiply;
+  }
+}
+
 .top-albums-rank {
-  @extend rank-number;
   position: absolute;
   font-size: calc(1em * 48 / 16);
   font-weight: 100;
@@ -75,6 +105,11 @@
   text-align: center;
   color: #FFF;
   font-weight: 400;
+
+  @nest .no-image & {
+    color: inherit;
+    opacity: 0.4;
+  }
 }
 
 .top-albums-cover-column {

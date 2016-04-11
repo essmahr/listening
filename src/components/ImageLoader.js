@@ -27,6 +27,7 @@ class ImageLoader extends React.Component {
   render() {
     const classes = classnames({
       'img-loader-container': true,
+      'no-image': this.props.imgSrc.length === 0,
       [this.props.className]: (this.props.className !== undefined),
       'img-loaded': this.state.imgLoaded,
     })

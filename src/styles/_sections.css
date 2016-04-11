@@ -8,5 +8,5 @@
 .section-title {
   @extend header-1;
   margin-bottom: 1em;
-  opacity: 0.6;
+  opacity: 0.8;
 }
