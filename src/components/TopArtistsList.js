@@ -16,14 +16,9 @@ class TopArtistsList extends React.Component {
     });
 
     return (
-      <section className="section">
-        <header className="section-header">
-          <h1 className="section-title">Top Artists</h1>
-        </header>
-        <ul className="list top-artists-list">
-          {artists}
-        </ul>
-      </section>
+      <ul className="list top-artists-list">
+        {artists}
+      </ul>
     );
   }
 }

@@ -2,23 +2,27 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { loadTopTracks } from '../actions';
 
+import ListHeader from '../components/ListHeader';
 import TopTrackList from '../components/TopTrackList';
 
 class TopTracksPage extends React.Component {
   componentWillMount() {
-    this.props.loadTopTracks();
+    this.props.loadTopTracks('allTime');
   }
 
   render() {
     return (
-      <TopTrackList tracks={this.props.topTracks} />
+      <section className="section">
+        <ListHeader title="Top Tracks" />
+        <TopTrackList tracks={this.props.topTracks.allTime} />
+      </section>
     );
   }
 }
 
 function mapStateToProps(state, ownProps) {
   return {
-    topTracks: state.entities.topTracks,
+    topTracks: state.charts.topTracks,
   }
 }
 

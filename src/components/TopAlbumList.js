@@ -11,14 +11,9 @@ class AlbumList extends React.Component {
     });
 
     return (
-      <section className="section">
-        <header className="section-header">
-          <h1 className="section-title">Top Albums</h1>
-        </header>
-        <ul className="list top-albums-list">
-          {albums}
-        </ul>
-      </section>
+      <ul className="list top-albums-list">
+        {albums}
+      </ul>
     );
   }
 }

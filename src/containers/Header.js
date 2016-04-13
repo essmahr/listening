@@ -26,9 +26,9 @@ class Header extends React.Component {
 };
 
 function mapStateToProps(state) {
-  if (!state.entities.recentTracks.length) return {};
+  if (!state.recentTracks.length) return {};
 
-  const latestTrack = state.entities.recentTracks[0];
+  const latestTrack = state.recentTracks[0];
   const nowPlaying = latestTrack['@attr'] !== undefined && latestTrack['@attr'].nowplaying;
   return {
     nowPlaying: nowPlaying ? latestTrack : false
