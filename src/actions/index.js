@@ -111,3 +111,14 @@ export function loadTopArtists(period) {
     return dispatch(fetchTopArtists(period));
   }
 }
+
+/*---------------- Changing Timespan ----------------*/
+
+export const TIME_SPAN_CHANGE = 'TIME_SPAN_CHANGE';
+
+export function changeTimeSpan(timeSpan) {
+  return {
+    type: TIME_SPAN_CHANGE,
+    timeSpan
+  }
+}

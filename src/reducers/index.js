@@ -44,9 +44,18 @@ function recentTracks(state = [], action) {
   return state;
 }
 
+function activeTimeSpan(state = 'allTime', action) {
+  if (action.type === 'TIME_SPAN_CHANGE') {
+    return action.timeSpan;
+  }
+
+  return state;
+}
+
 const rootReducer = combineReducers({
   charts,
   recentTracks,
+  activeTimeSpan,
   routing,
 })
 
