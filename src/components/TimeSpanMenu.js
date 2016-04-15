@@ -8,24 +8,35 @@ class TimeSpanButton extends React.Component {
   }
 
   render() {
+    const active = this.props.isActive ? 'active' : '';
+
     return (
-      <button onClick={this.onClick.bind(this)}>{this.props.label}</button>
+      <button className={`timespan-menu-button ${active}`} onClick={this.onClick.bind(this)}>{this.props.label}</button>
     );
   }
 }
 
 class TimeSpanMenu extends React.Component {
+  timespans = {
+    week: "Past Week",
+    month: "Past Month",
+    year: "Past Year",
+    allTime: "All-Time",
+  };
+
   onClick(span) {
     this.props.changeTimeSpan(span);
   }
 
   render() {
+    const buttons = Object.keys(this.timespans).map((timeSpan, idx) => {
+      return <TimeSpanButton key={idx} label={this.timespans[timeSpan]} isActive={this.props.activeTimeSpan === timeSpan} timeSpan={timeSpan} onClick={this.onClick.bind(this)} />;
+    });
+
+
     return (
-      <div>
-        <TimeSpanButton label="Past Week"  timeSpan="week"    onClick={this.onClick.bind(this)} />
-        <TimeSpanButton label="Past Month" timeSpan="month"   onClick={this.onClick.bind(this)} />
-        <TimeSpanButton label="Past Year"  timeSpan="year"    onClick={this.onClick.bind(this)} />
-        <TimeSpanButton label="All-Time"   timeSpan="allTime" onClick={this.onClick.bind(this)} />
+      <div className="timespan-menu">
+        {buttons}
       </div>
     );
   }

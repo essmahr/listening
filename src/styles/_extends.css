@@ -6,7 +6,7 @@
 }
 
 @define-placeholder header-2 {
-  font-size: calc(1em * 26 / 16);
+  font-size: calc(1em * 22 / 16);
   font-family: var(--titleFont);
   font-weight: 300;
   letter-spacing: -0.02em;

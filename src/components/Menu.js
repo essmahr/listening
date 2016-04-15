@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 
 export default class Explore extends React.Component {
   constructor(props) {
@@ -10,10 +10,10 @@ export default class Explore extends React.Component {
     return (
       <div className="container">
         <nav className="menu">
-          <Link className="menu-link" to="/">Recent</Link>
-          <Link className="menu-link" to="/albums">Albums</Link>
-          <Link className="menu-link" to="/tracks">Tracks</Link>
-          <Link className="menu-link" to="/artists">Artists</Link>
+          <IndexLink className="menu-link" activeClassName="active" to="/">Recent</IndexLink>
+          <Link className="menu-link" activeClassName="active" to="/albums">Albums</Link>
+          <Link className="menu-link" activeClassName="active" to="/tracks">Tracks</Link>
+          <Link className="menu-link" activeClassName="active" to="/artists">Artists</Link>
         </nav>
       </div>
     );

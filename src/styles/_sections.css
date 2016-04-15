@@ -3,10 +3,36 @@
   padding: 0 20px;
 }
 
-.section-header {}
+.section-header {
+  display: flex;
+  margin-bottom: 40px;
+}
 
 .section-title {
   @extend header-1;
-  margin-bottom: 1em;
+  flex-grow: 1;
+  line-height: 1;
   opacity: 0.8;
+}
+
+.timespan-menu {
+  align-self: flex-end;
+}
+
+.timespan-menu-button {
+  @extend text-small;
+  background: none;
+  border: 0;
+  padding: 0;
+  line-height: 1;
+  margin-left: 2em;
+  cursor: pointer;
+
+  &.active {
+    font-weight: 500;
+  }
+
+  &:focus {
+    outline: 0;
+  }
 }

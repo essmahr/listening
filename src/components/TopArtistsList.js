@@ -10,6 +10,7 @@ class TopArtistsList extends React.Component {
       return (<TopArtistsListItem
                 key={idx}
                 name={artist.name}
+                image={artist.image[2]['#text']}
                 rank={rank}
                 count={artist.playcount}
               />);

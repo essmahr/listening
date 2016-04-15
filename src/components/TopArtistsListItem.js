@@ -1,15 +1,16 @@
 import React from 'react';
+import ImageLoader from './ImageLoader';
 
 class TopArtistsListItem extends React.Component {
   render() {
-    const {name, rank, count} = this.props;
+    const {name, rank, image, count} = this.props;
 
     return (
       <li className="list-item top-artists-list-item">
-        <div className="top-artist-rank-column">
-          <div className="top-artist-rank">
-            {rank}
-          </div>
+        <div className="top-artist-image-column">
+          <ImageLoader imgSrc={image} className="list-image top-albums-rank-image">
+            <div className="list-image-rank top-artist-rank">{rank}</div>
+          </ImageLoader>
         </div>
         <div className="top-artist-info-column">
           <h1 className="top-artist-name">{name}</h1>

@@ -19,7 +19,6 @@
   opacity: 0.6;
 }
 
-
 .now-playing-song {
   @extend header-2;
   margin-top: 10px;
@@ -41,11 +40,16 @@
 
 .menu-link {
   @extend text-small;
-  lost-column: 1/4;
+  lost-column: 1/4 4 0 flex;
   text-align: center;
   text-decoration: none;
   color: inherit;
   padding: 10px 0;
+
+  &.active {
+    font-weight: 500;
+    background: var(--greyLight);
+  }
 
   &:hover {
     background: var(--greyLight);

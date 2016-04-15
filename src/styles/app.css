@@ -4,6 +4,7 @@
 @import "_normalize";
 @import "_typography";
 @import "_global";
+@import "_lists";
 @import "_header";
 @import "_sections";
-@import "_lists";
+@import "_images";
