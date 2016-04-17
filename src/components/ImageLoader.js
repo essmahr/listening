@@ -39,6 +39,8 @@ class ImageLoader extends React.Component {
   }
 
   componentDidMount() {
+    if (!this.el) return;
+
     const onScroll = debounce(() => {
       this.checkVisibility()
     }, 100);
@@ -66,8 +68,8 @@ class ImageLoader extends React.Component {
     })
 
     return (
-      <div className={classes} ref={(el) => this.el = el}>
-        {this.props.imgSrc.length ? <img className="img-loader-img" src={this.state.imgSrc} onLoad={this.onImgLoad.bind(this)} /> : null}
+      <div className={classes}>
+        {this.props.imgSrc.length ? <img className="img-loader-img" src={this.state.imgSrc} onLoad={this.onImgLoad.bind(this)} ref={(el) => this.el = el} /> : null}
         {this.props.children}
       </div>
     );

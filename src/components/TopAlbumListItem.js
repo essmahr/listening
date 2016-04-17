@@ -10,7 +10,7 @@ class AlbumListItem extends React.Component {
     return (
       <li className="list-item top-albums-list-item">
         <div className="top-albums-cover-column">
-          <ImageLoader imgSrc={imageSrc} className="list-image top-albums-rank-image">
+          <ImageLoader key={imageSrc} imgSrc={imageSrc} className="list-image top-albums-rank-image">
             <div className="list-image-rank top-albums-rank">{rank}</div>
           </ImageLoader>
         </div>
