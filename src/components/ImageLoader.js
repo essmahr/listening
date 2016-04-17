@@ -3,19 +3,14 @@ import classnames from 'classnames';
 import debounce from 'lodash.debounce';
 
 class ImageLoader extends React.Component {
-  onScroll = debounce(() => {
-    this.checkVisibility()
-  }, 100);
-
   constructor(props) {
     super(props);
 
     this.state = {
       imgLoaded: this.isImgCached(),
-      imgSrc: '',
+      imgSrc: this.isImgCached() ? this.props.imgSrc : '',
     }
   }
-
 
   onImgLoad() {
     this.setState({
@@ -27,8 +22,7 @@ class ImageLoader extends React.Component {
     const image = new Image();
     image.src = this.props.imgSrc;
 
-    return false;
-    // return image.complete;
+    return image.complete;
   }
 
   isInViewport() {
@@ -45,12 +39,23 @@ class ImageLoader extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.onScroll);
-    this.onScroll();
+    const onScroll = debounce(() => {
+      this.checkVisibility()
+    }, 100);
+
+    window.addEventListener('scroll', onScroll);
+
+    this.onUnMount = () => {
+      window.removeEventListener('scroll', onScroll);
+    }
+
+    onScroll();
   }
 
-  componentWillUnMount() {
-    window.removeEventListener('scroll', this.onScroll);
+  componentWillUnmount() {
+    if (this.onUnMount) {
+      this.onUnMount();
+    }
   }
 
   render() {
@@ -72,6 +77,6 @@ class ImageLoader extends React.Component {
 ImageLoader.propTypes = {
   className: React.PropTypes.string,
   imgSrc: React.PropTypes.string.isRequired,
-}
+};
 
 export default ImageLoader;
