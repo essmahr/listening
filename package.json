@@ -39,6 +39,7 @@
     "exports-loader": "^0.6.3",
     "imports-loader": "^0.6.5",
     "lodash": "^4.8.2",
+    "lodash.debounce": "^4.0.6",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-redux": "^4.4.1",
