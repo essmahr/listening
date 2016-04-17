@@ -28,7 +28,7 @@ class TopArtistsPage extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    topArtists: state.charts.topArtists,
+    topArtists: state.lists.charts.topArtists,
     activeTimeSpan: state.activeTimeSpan,
   }
 }

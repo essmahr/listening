@@ -28,7 +28,7 @@ class TopTracksPage extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    topTracks: state.charts.topTracks,
+    topTracks: state.lists.charts.topTracks,
     activeTimeSpan: state.activeTimeSpan,
   }
 }

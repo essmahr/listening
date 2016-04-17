@@ -3,6 +3,7 @@
   font-family: var(--titleFont);
   font-weight: 400;
   letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 @define-placeholder header-2 {
@@ -10,6 +11,7 @@
   font-family: var(--titleFont);
   font-weight: 300;
   letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 @define-placeholder header-3 {

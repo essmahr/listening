@@ -25,7 +25,8 @@ const initialCharts = {
 }
 
 function isChartSuccessAction(actionType) {
-  return actionType === 'TOP_ALBUMS_SUCCESS' || actionType === 'TOP_TRACKS_SUCCESS' || actionType === 'TOP_ARTISTS_SUCCESS';
+  return actionType === 'TOP_ALBUMS_SUCCESS'
+  || actionType === 'TOP_TRACKS_SUCCESS' || actionType === 'TOP_ARTISTS_SUCCESS';
 }
 
 function charts(state = initialCharts, action) {
@@ -52,9 +53,35 @@ function activeTimeSpan(state = 'allTime', action) {
   return state;
 }
 
-const rootReducer = combineReducers({
+function isFetching(state = false, action) {
+  switch (action.type) {
+    case 'TOP_ALBUMS_REQUEST':
+    case 'TOP_TRACKS_REQUEST':
+    case 'TOP_ARTISTS_REQUEST':
+    case 'RECENT_TRACKS_REQUEST':
+      return true;
+    case 'TOP_ALBUMS_SUCCESS':
+    case 'TOP_ALBUMS_FAILURE':
+    case 'TOP_TRACKS_SUCCESS':
+    case 'TOP_TRACKS_FAILURE':
+    case 'TOP_ARTISTS_SUCCESS':
+    case 'TOP_ARTISTS_FAILURE':
+    case 'RECENT_TRACKS_SUCCESS':
+    case 'RECENT_TRACKS_FAILURE':
+      return false
+    default:
+      return state;
+  }
+}
+
+const lists = combineReducers({
   charts,
   recentTracks,
+  isFetching,
+})
+
+const rootReducer = combineReducers({
+  lists,
   activeTimeSpan,
   routing,
 })

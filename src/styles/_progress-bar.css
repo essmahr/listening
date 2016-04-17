@@ -1,0 +1,16 @@
+.progress-bar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  animation: rotate 1s infinite linear;
+  background: red;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+
+

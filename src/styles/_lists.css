@@ -121,6 +121,7 @@
 
 .top-track-name {
   @extend header-2;
+  margin-bottom: 4px;
 }
 
 .top-track-artist {}

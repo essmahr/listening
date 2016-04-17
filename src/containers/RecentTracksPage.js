@@ -18,7 +18,7 @@ class RecentTracksPage extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    recentTracks: state.recentTracks,
+    recentTracks: state.lists.recentTracks,
   }
 }
 

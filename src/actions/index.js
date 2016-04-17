@@ -18,7 +18,7 @@ function fetchRecentTracks() {
 
 export function loadRecentTracks() {
   return (dispatch, getState) => {
-    const loaded = getState().recentTracks.length;
+    const loaded = getState().lists.recentTracks.length;
     if (loaded) {
       return null
     }
@@ -46,7 +46,7 @@ function fetchTopAlbums(period) {
 
 export function loadTopAlbums(period) {
   return (dispatch, getState) => {
-    const loaded = getState().charts.topAlbums[period].length;
+    const loaded = getState().lists.charts.topAlbums[period].length;
     if (loaded) {
       return null
     }
@@ -74,7 +74,7 @@ function fetchTopTracks(period) {
 
 export function loadTopTracks(period) {
   return (dispatch, getState) => {
-    const loaded = getState().charts.topTracks[period].length;
+    const loaded = getState().lists.charts.topTracks[period].length;
     if (loaded) {
       return null
     }
@@ -95,7 +95,6 @@ function fetchTopArtists(period) {
     [CALL_API]: {
       types: [ TOP_ARTISTS_REQUEST, TOP_ARTISTS_SUCCESS, TOP_ARTISTS_FAILURE ],
       endpoint: 'user.gettopartists',
-      listType: 'CHART',
       period,
     }
   };
@@ -103,7 +102,7 @@ function fetchTopArtists(period) {
 
 export function loadTopArtists(period) {
   return (dispatch, getState) => {
-    const loaded = getState().charts.topArtists[period].length;
+    const loaded = getState().lists.charts.topArtists[period].length;
     if (loaded) {
       return null
     }

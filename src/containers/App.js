@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../containers/Header';
+import ProgressBar from '../components/ProgressBar';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <ProgressBar/>
+        <Header/>
         {this.props.children}
       </div>
     );
