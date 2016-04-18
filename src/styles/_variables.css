@@ -1,6 +1,10 @@
 @lost gutter 32px;
 @lost flexbox flex;
 
+@custom-media --screenLarge (min-width: 820px);
+@custom-media --screenMedium (min-width: 500px);
+
+
 :root {
   --titleFont: "Inknut Antiqua", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
   --bodyFont: 'Roboto Mono', monospace;

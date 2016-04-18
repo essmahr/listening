@@ -1,5 +1,5 @@
 .site-header {
-  margin-bottom: 40px;
+  margin-bottom: calc(40px + 5vh);
 }
 
 

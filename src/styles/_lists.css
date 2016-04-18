@@ -4,10 +4,13 @@
 }
 
 .list-item {
-  lost-flex-container: row;
   align-items: top;
   border-top: 1px solid var(--borderColor);
   padding: 16px 0;
+
+  @media (--screenMedium) {
+    lost-flex-container: row;
+  }
 
   &.first-of-type {
     border-top-width: 3px;
@@ -65,7 +68,13 @@
 .top-albums-rank {}
 
 .top-albums-cover-column {
-  lost-column: 2/12;
+  @media (--screenMedium) {
+    lost-column: 3/12;
+  }
+
+  @media (--screenLarge) {
+    lost-column: 2/12;
+  }
 }
 
 .top-album-name {
@@ -78,7 +87,13 @@
 }
 
 .top-albums-info-column {
-  lost-column: 8/12;
+  @media (--screenMedium) {
+    lost-column: 9/12;
+  }
+
+  @media (--screenLarge) {
+    lost-column: 8/12;
+  }
 }
 
 .top-albums-playcount {
@@ -102,8 +117,11 @@
 }
 
 .top-track-rank-column {
-  width: 48px;
-  margin-right: 18px;
+
+  @media (--screenMedium) {
+    width: 48px;
+    margin-right: 18px;
+  }
 }
 
 .top-track-rank {
@@ -111,12 +129,16 @@
 }
 
 .top-track-info-column {
-  flex: 1;
+  @media (--screenMedium) {
+    flex: 1;
+  }
 }
 
 .top-track-playcount-column {
-  lost-column: 3/12;
-  text-align: right;
+  @media (--screenMedium) {
+    text-align: right;
+    lost-column: 3/12;
+  }
 }
 
 .top-track-name {
@@ -134,16 +156,29 @@
 }
 
 .top-artist-image-column {
-  lost-column: 1.5/12;
+  @media (--screenMedium) {
+    flex: 1;
+    max-width: 96px;
+    margin-right: 32px;
+  }
 }
 
 .top-artist-info-column {
-  flex: 1;
+
+  @media (--screenMedium) {
+    flex: 1;
+  }
 }
 
 .top-artist-playcount-column {
-  lost-column: 3/12;
-  text-align: right;
+  @media (--screenMedium) {
+    lost-column: 4/12;
+    text-align: right;
+  }
+
+  @media (--screenLarge) {
+    lost-column: 3/12;
+  }
 }
 
 .top-artist-name {
