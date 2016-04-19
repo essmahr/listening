@@ -1,8 +1,10 @@
 @lost gutter 32px;
 @lost flexbox flex;
 
-@custom-media --screenLarge (min-width: 820px);
-@custom-media --screenMedium (min-width: 500px);
+@custom-media --screenSmallOnly (max-width: 499px);
+@custom-media --screenMediumUp (min-width: 500px);
+@custom-media --screenMediumOnly (max-width: 739px);
+@custom-media --screenLargeUp (min-width: 740px);
 
 
 :root {

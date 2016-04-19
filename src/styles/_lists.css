@@ -4,13 +4,10 @@
 }
 
 .list-item {
-  align-items: top;
+  align-items: center;
   border-top: 1px solid var(--borderColor);
-  padding: 16px 0;
-
-  @media (--screenMedium) {
-    lost-flex-container: row;
-  }
+  padding: calc(8px + 1.5vh) 0;
+  lost-flex-container: row;
 
   &.first-of-type {
     border-top-width: 3px;
@@ -20,14 +17,32 @@
 
 /* ----- Recent Tracks ---- */
 
+.recent-track-info-container {
+  lost-column: 12/12;
+
+  @media (--screenMediumUp) {
+    lost-column: 8/12;
+  }
+
+  @media (--screenLargeUp) {
+    lost-flex-container: row;
+    lost-column: 9/12;
+  }
+}
+
 .recent-track-artist {
-  lost-column: 3/12;
   @extend header-3;
   opacity: 0.6;
+
+  @media (--screenLargeUp) {
+    lost-column: 3/9;
+  }
 }
 
 .recent-track-song {
-  lost-column: 7/12;
+  @media (--screenLargeUp) {
+    lost-column: 6/9;
+  }
 }
 
 .recent-track-title {
@@ -47,17 +62,23 @@
 }
 
 .recent-track-timestamp {
-  lost-column: 2/12;
-  text-align: right;
   font-size: 14px;
   line-height: 38px;
+
+  @media (--screenMediumUp) {
+    lost-column: 4/12;
+    text-align: right;
+  }
+
+  @media (--screenLargeUp) {
+    lost-column: 3/12;
+  }
 }
 
 
 /* ----- Top Albums ---- */
 
 .top-albums-list-item {
-  align-items: center;
   padding: 24px 0;
 }
 
@@ -65,15 +86,15 @@
   position: relative;
 }
 
-.top-albums-rank {}
-
 .top-albums-cover-column {
-  @media (--screenMedium) {
-    lost-column: 3/12;
+  @media (--screenSmallOnly) {
+    lost-column: 4/12;
   }
 
-  @media (--screenLarge) {
-    lost-column: 2/12;
+  @media (--screenMediumUp) {
+    flex: 1;
+    max-width: 160px;
+    margin-right: 32px;
   }
 }
 
@@ -87,11 +108,13 @@
 }
 
 .top-albums-info-column {
-  @media (--screenMedium) {
+  lost-column: 8/12;
+
+  @media (--screenMediumUp) {
     lost-column: 9/12;
   }
 
-  @media (--screenLarge) {
+  @media (--screenLargeUp) {
     lost-column: 8/12;
   }
 }
@@ -99,8 +122,6 @@
 .top-albums-playcount {
   margin-top: 2px;
 }
-
-.top-albums-playcount-count {}
 
 .top-albums-playcount-label {
   text-transform: uppercase;
@@ -116,28 +137,53 @@
   align-items: center;
 }
 
-.top-track-rank-column {
-
-  @media (--screenMedium) {
-    width: 48px;
-    margin-right: 18px;
-  }
+.top-track-rank-container {
+  width: 48px;
+  margin-right: 18px;
 }
 
 .top-track-rank {
-  font-size: 24px;
-}
+  @media (--screenSmallOnly) {
+    font-size: 32px;
+    font-weight: 400;
+    opacity: 0.6;
+    text-align: center;
+  }
 
-.top-track-info-column {
-  @media (--screenMedium) {
-    flex: 1;
+  @media (--screenMediumUp) {
+    font-size: 24px;
   }
 }
 
-.top-track-playcount-column {
-  @media (--screenMedium) {
+.top-track-info-container {
+  flex: 1;
+
+  @media (--screenSmallOnly) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  @media (--screenMediumUp) {
+    lost-flex-container: row;
+    align-items: center;
+  }
+}
+
+.top-track-song {
+  @media (--screenMediumUp) {
+    lost-column: 8/12;
+  }
+}
+
+.top-track-playcount {
+  @media (--screenSmallOnly) {
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+
+  @media (--screenMediumUp) {
     text-align: right;
-    lost-column: 3/12;
+    lost-column: 4/12;
   }
 }
 
@@ -146,41 +192,43 @@
   margin-bottom: 4px;
 }
 
-.top-track-artist {}
-
 
 /* ----- Top Artists ---- */
 
-.top-artists-list-item {
-  align-items: center;
-}
+.top-artist-image-container {
+  @media (--screenSmallOnly) {
+    lost-column: 4/12;
+  }
 
-.top-artist-image-column {
-  @media (--screenMedium) {
+  @media (--screenMediumUp) {
     flex: 1;
     max-width: 96px;
     margin-right: 32px;
   }
 }
 
-.top-artist-info-column {
+.top-artist-info-container {
+  @media (--screenSmallOnly) {
+    lost-column: 8/12;
+  }
 
-  @media (--screenMedium) {
+  @media (--screenMediumUp) {
     flex: 1;
-  }
-}
-
-.top-artist-playcount-column {
-  @media (--screenMedium) {
-    lost-column: 4/12;
-    text-align: right;
-  }
-
-  @media (--screenLarge) {
-    lost-column: 3/12;
+    lost-flex-container: row;
   }
 }
 
 .top-artist-name {
   @extend header-2;
+
+  @media (--screenMediumUp) {
+    lost-column: 5/8;
+  }
+}
+
+.top-artist-playcount {
+  @media (--screenMediumUp) {
+    lost-column: 3/8;
+    text-align: right;
+  }
 }

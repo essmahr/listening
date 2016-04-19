@@ -11,10 +11,12 @@ class RecentTrackListItem extends React.Component {
 
     return (
       <li className={classNames.join(' ')}>
-        <div className="recent-track-artist">{this.props.artist}</div>
-        <div className="recent-track-song">
-          <span className="recent-track-title">{smarten(this.props.name)}</span>
-          <div className="recent-track-album">{this.props.album['#text']}</div>
+        <div className="recent-track-info-container">
+          <div className="recent-track-artist">{this.props.artist}</div>
+          <div className="recent-track-song">
+            <span className="recent-track-title">{smarten(this.props.name)}</span>
+            <div className="recent-track-album">{this.props.album['#text']}</div>
+          </div>
         </div>
         <TimeAgo className="recent-track-timestamp" date={timestamp}/>
       </li>

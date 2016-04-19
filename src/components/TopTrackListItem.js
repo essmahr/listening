@@ -6,18 +6,20 @@ class TrackListItem extends React.Component {
 
     return (
       <li className="list-item top-tracks-list-item">
-        <div className="top-track-rank-column">
+        <div className="top-track-rank-container">
           <div className="top-track-rank">
             {rank}
           </div>
         </div>
-        <div className="top-track-info-column">
-          <h1 className="top-track-name">{track}</h1>
-          <h2 className="top-track-artist">{artist}</h2>
-        </div>
-        <div className="top-track-playcount-column">
-          <strong className="top-track-playcount-count">{count}</strong>
-          <span className="top-track-playcount-label"> Plays</span>
+        <div className="top-track-info-container">
+          <div className="top-track-song">
+            <h1 className="top-track-name">{track}</h1>
+            <h2 className="top-track-artist">{artist}</h2>
+          </div>
+          <div className="top-track-playcount">
+            <strong className="top-track-playcount-count">{count}</strong>
+            <span className="top-track-playcount-label"> Plays</span>
+          </div>
         </div>
       </li>
     )

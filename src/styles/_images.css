@@ -34,7 +34,6 @@
 .list-image-rank {
   position: absolute;
   font-size: calc(1em * 48 / 16);
-  font-weight: 100;
   left: 0;
   right: 0;
   top: 50%;

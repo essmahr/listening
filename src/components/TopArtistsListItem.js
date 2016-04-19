@@ -7,17 +7,17 @@ class TopArtistsListItem extends React.Component {
 
     return (
       <li className="list-item top-artists-list-item">
-        <div className="top-artist-image-column">
+        <div className="top-artist-image-container">
           <ImageLoader imgSrc={image} className="list-image top-albums-rank-image">
             <div className="list-image-rank top-artist-rank">{rank}</div>
           </ImageLoader>
         </div>
-        <div className="top-artist-info-column">
+        <div className="top-artist-info-container">
           <h1 className="top-artist-name">{name}</h1>
-        </div>
-        <div className="top-artist-playcount-column">
-          <strong className="top-artist-playcount-count">{count}</strong>
-          <span className="top-artist-playcount-label"> Plays</span>
+          <div className="top-artist-playcount">
+            <strong className="top-artist-playcount-count">{count}</strong>
+            <span className="top-artist-playcount-label"> Plays</span>
+          </div>
         </div>
       </li>
     )

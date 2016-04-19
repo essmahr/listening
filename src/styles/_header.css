@@ -1,5 +1,11 @@
 .site-header {
-  margin-bottom: calc(40px + 5vh);
+  @media (--screenMediumOnly) {
+    margin-bottom: 40px;
+  }
+
+  @media (--screenMediumUp) {
+    margin-bottom: calc(40px + 5vh);
+  }
 }
 
 
