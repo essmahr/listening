@@ -6,8 +6,13 @@
 .list-item {
   align-items: center;
   border-top: 1px solid var(--borderColor);
-  padding: calc(8px + 1.5vh) 0;
+  padding: 16px 0;
   lost-flex-container: row;
+
+  @media (--screenMediumUp) {
+    padding: calc(8px + 1.5vh) 0;
+  }
+
 
   &.first-of-type {
     border-top-width: 3px;
@@ -79,7 +84,11 @@
 /* ----- Top Albums ---- */
 
 .top-albums-list-item {
-  padding: 24px 0;
+  padding: 16px 0;
+
+  @media (--screenMediumUp) {
+    padding: calc(16px + 2vh) 0;
+  }
 }
 
 .top-albums-rank-image {

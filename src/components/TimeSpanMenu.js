@@ -11,7 +11,9 @@ class TimeSpanButton extends React.Component {
     const active = this.props.isActive ? 'active' : '';
 
     return (
-      <button className={`timespan-menu-button ${active}`} onClick={this.onClick.bind(this)}>{this.props.label}</button>
+      <button className={`timespan-menu-button ${active}`} onClick={this.onClick.bind(this)}>
+        {this.props.children}
+      </button>
     );
   }
 }
@@ -29,14 +31,25 @@ class TimeSpanMenu extends React.Component {
   }
 
   render() {
-    const buttons = Object.keys(this.timespans).map((timeSpan, idx) => {
-      return <TimeSpanButton key={idx} label={this.timespans[timeSpan]} isActive={this.props.activeTimeSpan === timeSpan} timeSpan={timeSpan} onClick={this.onClick.bind(this)} />;
-    });
-
+    const {activeTimeSpan} = this.props;
 
     return (
       <div className="timespan-menu">
-        {buttons}
+        <TimeSpanButton isActive={activeTimeSpan === 'week'} timeSpan='week' onClick={this.onClick.bind(this)}>
+          <span className="fl">Past</span> Week
+        </TimeSpanButton>
+        <TimeSpanButton isActive={activeTimeSpan === 'month'} timeSpan='month' onClick={this.onClick.bind(this)}>
+          <span className="fl">Past</span> Month
+        </TimeSpanButton>
+        <TimeSpanButton isActive={activeTimeSpan === 'year'} timeSpan='year' onClick={this.onClick.bind(this)}>
+          <span className="fl">Past</span> Year
+        </TimeSpanButton>
+        <TimeSpanButton isActive={activeTimeSpan === 'allTime'} timeSpan='allTime' onClick={this.onClick.bind(this)}>
+          <span className="fl">All-Time</span>
+          <svg viewBox="0 0 173 83">
+            <path stroke="#000000" fill="none" strokeWidth="8" d="M9.98046875,38.9023438 C9.98046875,38.9023438 10.7465632,7.85546875 42.7599501,7.85546875 C74.7733369,7.85546875 94.0707906,73.2421875 130.921876,73.2421875 C167.772962,73.2421875 165.539064,38.9023438 165.539064,38.9023438 C165.539064,38.9023438 167.199051,7.85546875 130.921876,7.85546875 C94.6447018,7.85546875 80.3192095,73.2421875 42.7599512,73.2421875 C5.20069282,73.2421875 9.98046875,38.9023438 9.98046875,38.9023438 Z"></path>
+          </svg>
+        </TimeSpanButton>
       </div>
     );
   }
