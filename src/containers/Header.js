@@ -18,8 +18,8 @@ class Header extends React.Component {
   render() {
     return (
       <header className="site-header">
-        {this.props.nowPlaying ? <NowPlaying track={this.props.nowPlaying}/> : null}
         <Menu />
+        {this.props.nowPlaying ? <NowPlaying track={this.props.nowPlaying}/> : null}
       </header>
     );
   }

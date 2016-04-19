@@ -6,9 +6,11 @@ class ImageLoader extends React.Component {
   constructor(props) {
     super(props);
 
+    const imgLoaded = this.isImgCached();
+
     this.state = {
-      imgLoaded: this.isImgCached(),
-      imgSrc: this.isImgCached() ? this.props.imgSrc : '',
+      imgLoaded,
+      imgSrc: imgLoaded ? this.props.imgSrc : '',
     }
   }
 
@@ -68,8 +70,8 @@ class ImageLoader extends React.Component {
     })
 
     return (
-      <div className={classes}>
-        {this.props.imgSrc.length ? <img className="img-loader-img" src={this.state.imgSrc} onLoad={this.onImgLoad.bind(this)} ref={(el) => this.el = el} /> : null}
+      <div className={classes} ref={(el) => this.el = el}>
+        {this.props.imgSrc.length ? <img className="img-loader-img" src={this.state.imgSrc} onLoad={this.onImgLoad.bind(this)} /> : null}
         {this.props.children}
       </div>
     );

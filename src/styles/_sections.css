@@ -69,4 +69,25 @@
   &:focus {
     outline: 0;
   }
+
+  & svg {
+    display: none;
+  }
+
+  @media (--screenSmallOnly) {
+    & .fl { display: none; }
+
+    & svg {
+      display: inline-block;
+      width: 16px;
+    }
+
+    path {
+      stroke-width: 9px;
+    }
+
+    &.active path {
+      stroke-width: 15px;
+    }
+  }
 }

@@ -40,8 +40,8 @@
 /* Menu */
 
 .menu {
-  lost-center: var(--maxWidth);
-  border-bottom: 2px solid var(--greyLight);
+  background: color(var(--greyLight) blackness(5%));
+  lost-flex-container: row;
 }
 
 .menu-link {
@@ -54,10 +54,10 @@
 
   &.active {
     font-weight: 500;
-    background: var(--greyLight);
+    background: color(var(--greyLight) blackness(8%));;
   }
 
-  &:hover {
-    background: var(--greyLight);
+  &:not(.active):hover {
+    background: color(var(--greyLight) blackness(8%));
   }
 }

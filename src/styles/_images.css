@@ -5,13 +5,18 @@
 .img-loader-container {
   position: relative;
   padding: 50% 0;
-  background-color: #888;
+  background-color: #eee;
   overflow: hidden;
   border-radius: 3px;
+  transition: all 1s ease;
 
   &.no-image {
     background: none;
     border: 2px solid var(--borderColor);
+  }
+
+  &.img-loaded {
+    background-color: #888;
   }
 }
 

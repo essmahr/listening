@@ -8,7 +8,7 @@ class TopArtistsListItem extends React.Component {
     return (
       <li className="list-item top-artists-list-item">
         <div className="top-artist-image-container">
-          <ImageLoader imgSrc={image} className="list-image top-albums-rank-image">
+          <ImageLoader key={image} imgSrc={image} className="list-image top-albums-rank-image">
             <div className="list-image-rank top-artist-rank">{rank}</div>
           </ImageLoader>
         </div>
