@@ -11,12 +11,14 @@
   --titleFont: "Inknut Antiqua", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
   --bodyFont: 'Roboto Mono', monospace;
 
-  --bodyColor: #444;
-  --greyLight: #FAFAFA;
+  --backgroundColor: #FFFFFF;
+  --bodyColor: color(#F5F1EE shade(70%));
 
-  --accentColor: #DC5B6B;
+  --greyLight: color(#F5F1EE tint(50%));
+  --greyMedium: color(#F5F1EE shade(6%));
+  --greyDark: color(#F5F1EE shade(40%));;
+
+  --accent: #F04B33;
 
   --maxWidth: 1020px;
-
-  --borderColor: #E0E0E0;
 }

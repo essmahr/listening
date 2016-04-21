@@ -1,4 +1,6 @@
 .site-header {
+  padding: 0 40px;
+
   @media (--screenMediumOnly) {
     margin-bottom: 40px;
   }
@@ -13,35 +15,30 @@
 
 .now-playing {
   padding: 2em 0;
-  background: var(--greyLight);
+  text-align: center;
+  border-bottom: 1px solid var(--greyMedium);
 }
 
-.now-playing-wrapper {
-
-}
+.now-playing-wrapper {}
 
 .now-playing-label {
-  @extend text-small;
-  opacity: 0.6;
+  color: var(--greyDark);
 }
 
-.now-playing-song {
-  @extend header-2;
-  margin-top: 10px;
-
-
-  & .sep {
-    display: inline-block;
-    margin: 0 6px;
-  }
+.now-playing-artist {
+  font-size: calc(1em * 22 / 16);
+  font-family: var(--titleFont);
+  margin: 6px 0;
 }
+
+.now-playing-title {}
 
 
 /* Menu */
 
 .menu {
-  background: color(var(--greyLight) blackness(5%));
   lost-flex-container: row;
+  border-bottom: 1px solid var(--greyMedium);
 }
 
 .menu-link {
@@ -51,13 +48,19 @@
   text-decoration: none;
   color: inherit;
   padding: 10px 0;
+  border-right: 1px solid var(--greyMedium);
+
+  &:last-child {
+    border-right: 0;
+  }
 
   &.active {
+    color: var(--accent);
     font-weight: 500;
-    background: color(var(--greyLight) blackness(8%));;
+    background-color: var(--greyLight);
   }
 
   &:not(.active):hover {
-    background: color(var(--greyLight) blackness(8%));
+    color: var(--accent);
   }
 }

@@ -7,7 +7,7 @@
 }
 
 @define-placeholder header-2 {
-  font-size: calc(1em * 22 / 16);
+  font-size: calc(1em * 28 / 16);
   font-family: var(--titleFont);
   font-weight: 300;
   letter-spacing: -0.02em;
@@ -15,15 +15,15 @@
 }
 
 @define-placeholder header-3 {
-  font-size: calc(1em * 18 / 16);
+  font-size: calc(1em * 22 / 16);
   font-family: var(--titleFont);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.02em;
 }
 
 @define-placeholder header-4 {
   font-size: calc(1em * 18 / 16);
-  font-weight: 400;
+  font-weight: 300;
 }
 
 @define-placeholder text-small {

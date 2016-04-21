@@ -14,11 +14,11 @@ body {
 }
 
 body {
-  /* lost-utility: edit; */
   font-family: var(--bodyFont);
   color: var(--bodyColor);
   line-height: 1.5;
   font-weight: 300;
+  background-color: var(--backgroundColor);
 }
 
 ul,
@@ -38,3 +38,13 @@ img {
   padding: 0 20px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: inherit;
+}

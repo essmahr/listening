@@ -1,5 +1,5 @@
 
-const API_ROOT = "http://ws.audioscrobbler.com/2.0/?format=json&api_key=6084246ab5e1ff9a0d042f39b7f44a3a&extended=1&limit=25&user=kazoo_kid&method=";
+const API_ROOT = "http://ws.audioscrobbler.com/2.0/?format=json&api_key=6084246ab5e1ff9a0d042f39b7f44a3a&extended=1&limit=30&user=kazoo_kid&method=";
 
 // better key naming
 const periodMap = {
