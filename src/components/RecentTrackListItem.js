@@ -1,11 +1,27 @@
 import React from 'react';
 import TimeAgo from 'react-timeago';
 import smarten from '../lib/smarten'
+import moment from 'moment';
 
 class RecentTrackListItem extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.timestamp = parseInt(props.date, 10) * 1000;
+  }
+
+  timeLabel() {
+    const dayAgo = new Date().getTime() - (60 * 60 * 12 * 1000);
+
+    if (this.timestamp > dayAgo) {
+      return moment(this.timestamp).fromNow();
+    } else {
+      return moment(this.timestamp).format('MMMM D h:mma');
+    }
+  }
+
   render() {
     const classNames = ['list-item', 'recent-tracks-list-item'];
-    const timestamp = parseInt(this.props.date, 10) * 1000;
 
     if (this.props.firstOfAlbum) { classNames.push('first-of-type'); }
 
@@ -18,7 +34,7 @@ class RecentTrackListItem extends React.Component {
             <div className="recent-track-album">{this.props.album['#text']}</div>
           </div>
         </div>
-        <TimeAgo className="recent-track-timestamp" date={timestamp}/>
+        <span className="recent-track-timestamp">{this.timeLabel()}</span>
       </li>
     )
   }

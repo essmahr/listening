@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import debounce from 'lodash.debounce';
+import debounce from 'lodash/debounce';
 
 class ImageLoader extends React.Component {
   constructor(props) {

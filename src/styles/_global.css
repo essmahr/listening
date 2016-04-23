@@ -48,3 +48,20 @@ h6 {
   font-size: 1em;
   font-weight: inherit;
 }
+
+.button {
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  background: var(--greyLight);
+  border: 1px solid transparent;
+
+  &:focus {
+    outline: 0;
+    border-color: rgba(0,0,0,0.05);
+  }
+}

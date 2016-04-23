@@ -1,17 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { loadRecentTracks } from '../actions';
+import { loadRecentTracks, loadMoreTracks } from '../actions';
 
 import RecentTrackList from '../components/RecentTrackList';
+import LoadMoreButton from '../components/LoadMoreButton';
 
 class RecentTracksPage extends React.Component {
   componentWillMount() {
     this.props.loadRecentTracks();
   }
 
+  loadMore() {
+    this.props.loadMoreTracks();
+  }
+
   render() {
     return (
-      <RecentTrackList tracks={this.props.recentTracks} />
+      <section className="section">
+        <header className="section-header">
+          <h1 className="section-title">Recent Tracks</h1>
+        </header>
+        <RecentTrackList tracks={this.props.recentTracks} />
+        <LoadMoreButton onClick={this.loadMore.bind(this)} />
+      </section>
     );
   }
 }
@@ -23,5 +34,6 @@ function mapStateToProps(state, ownProps) {
 }
 
 export default connect(mapStateToProps, {
-  loadRecentTracks
+  loadRecentTracks,
+  loadMoreTracks,
 })(RecentTracksPage)

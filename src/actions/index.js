@@ -28,6 +28,14 @@ export function loadRecentTracks(params = {}) {
   }
 }
 
+export function loadMoreTracks(params = {}) {
+  return (dispatch, getState) => {
+    const page = getState().recentTracks.page + 1;
+
+    return dispatch(fetchRecentTracks({page}));
+  }
+}
+
 
 /*---------------- Top Albums ----------------*/
 

@@ -1,11 +1,12 @@
 import React from 'react';
-
 import RecentTrackListItem from './RecentTrackListItem';
-import LoadMoreButton from './LoadMoreButton';
 
 class RecentTrackList extends React.Component {
-  render() {
+  loadMore() {
 
+  }
+
+  render() {
     const tracks = this.props.tracks.map((track, idx) => {
       if (track.date === undefined) return;
 
@@ -22,15 +23,9 @@ class RecentTrackList extends React.Component {
     });
 
     return (
-      <section className="section">
-        <header className="section-header">
-          <h1 className="section-title">Recent Tracks</h1>
-        </header>
-        <ul className="list recent-tracks-list">
-          {tracks}
-        </ul>
-        <LoadMoreButton />
-      </section>
+      <ul className="list recent-tracks-list">
+        {tracks}
+      </ul>
     );
   }
 }

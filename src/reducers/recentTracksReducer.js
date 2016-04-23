@@ -6,9 +6,14 @@ const initialState = {
 }
 
 function recentTracksReducer(state = initialState, action) {
+
   if (action.type === 'RECENT_TRACKS_SUCCESS' && action.response) {
-    const feed = action.response.recenttracks.track;
-    return merge(state, {feed});
+    const page = action.page || state.page;
+    const feed = (page === 1)
+      ? action.response.recenttracks.track
+      : state.feed.concat(action.response.recenttracks.track)
+
+    return merge({}, state, {feed, page});
   }
 
   return state;

@@ -28,7 +28,11 @@ function callApi(endpoint, params) {
         return Promise.reject(json);
       }
 
-      return {response: json, period: params.period};
+      return {
+        response: json,
+        period: params.period,
+        page: params.page,
+      };
     });
 }
 
@@ -68,10 +72,11 @@ export default store => next => action => {
   next(actionWith({ type: requestType }))
 
   return callApi(endpoint, params).then(
-    ({response, period}) => {
+    ({response, period, page}) => {
       return next(actionWith({
         response,
         period,
+        page,
         type: successType
       }));
     },

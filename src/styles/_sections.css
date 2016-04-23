@@ -1,5 +1,6 @@
 .section {
   padding: 0 40px;
+  margin-bottom: 60px;
 }
 
 .section-header {
@@ -90,5 +91,34 @@
       stroke-width: 15px;
       stroke: var(--accent);
     }
+  }
+}
+
+.button-bar {
+  margin: 2em 0;
+  display: flex;
+}
+
+.button-to-top {
+  display: block;
+  margin-left: 32px;
+  width: 64px;
+  background: none;
+  border: 1px solid var(--greyMedium);
+
+  &:hover {
+    background: var(--greyLight);
+  }
+}
+
+.button-load-more {
+  width: 100%;
+
+  &:hover {
+    background: var(--greyMedium);
+  }
+
+  &:active {
+    background: color(var(--greyMedium) shade(5%));
   }
 }
