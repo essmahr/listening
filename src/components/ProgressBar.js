@@ -19,7 +19,7 @@ class ProgressBar extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    isFetching: state.lists.isFetching,
+    isFetching: state.isFetching,
   }
 }
 

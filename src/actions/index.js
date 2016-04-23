@@ -7,23 +7,24 @@ export const RECENT_TRACKS_REQUEST = 'RECENT_TRACKS_REQUEST';
 export const RECENT_TRACKS_SUCCESS = 'RECENT_TRACKS_SUCCESS';
 export const RECENT_TRACKS_FAILURE = 'RECENT_TRACKS_FAILURE';
 
-function fetchRecentTracks() {
+function fetchRecentTracks(params) {
   return {
     [CALL_API]: {
       types: [ RECENT_TRACKS_REQUEST, RECENT_TRACKS_SUCCESS, RECENT_TRACKS_FAILURE ],
       endpoint: 'user.getrecenttracks',
+      params
     }
   };
 }
 
-export function loadRecentTracks() {
+export function loadRecentTracks(params = {}) {
   return (dispatch, getState) => {
-    const loaded = getState().lists.recentTracks.length;
+    const loaded = getState().recentTracks.feed.length;
     if (loaded) {
       return null
     }
 
-    return dispatch(fetchRecentTracks());
+    return dispatch(fetchRecentTracks(params));
   }
 }
 
@@ -34,24 +35,24 @@ export const TOP_ALBUMS_REQUEST = 'TOP_ALBUMS_REQUEST';
 export const TOP_ALBUMS_SUCCESS = 'TOP_ALBUMS_SUCCESS';
 export const TOP_ALBUMS_FAILURE = 'TOP_ALBUMS_FAILURE';
 
-function fetchTopAlbums(period) {
+function fetchTopAlbums(params) {
   return {
     [CALL_API]: {
       types: [ TOP_ALBUMS_REQUEST, TOP_ALBUMS_SUCCESS, TOP_ALBUMS_FAILURE ],
       endpoint: 'user.gettopalbums',
-      period,
+      params,
     }
   };
 }
 
-export function loadTopAlbums(period) {
+export function loadTopAlbums(params) {
   return (dispatch, getState) => {
-    const loaded = getState().lists.charts.topAlbums[period].length;
+    const loaded = getState().topAlbums[params.period].feed.length;
     if (loaded) {
       return null
     }
 
-    return dispatch(fetchTopAlbums(period));
+    return dispatch(fetchTopAlbums(params));
   }
 }
 
@@ -62,24 +63,24 @@ export const TOP_TRACKS_REQUEST = 'TOP_TRACKS_REQUEST';
 export const TOP_TRACKS_SUCCESS = 'TOP_TRACKS_SUCCESS';
 export const TOP_TRACKS_FAILURE = 'TOP_TRACKS_FAILURE';
 
-function fetchTopTracks(period) {
+function fetchTopTracks(params) {
   return {
     [CALL_API]: {
       types: [ TOP_TRACKS_REQUEST, TOP_TRACKS_SUCCESS, TOP_TRACKS_FAILURE ],
       endpoint: 'user.gettoptracks',
-      period,
+      params,
     }
   };
 }
 
-export function loadTopTracks(period) {
+export function loadTopTracks(params) {
   return (dispatch, getState) => {
-    const loaded = getState().lists.charts.topTracks[period].length;
+    const loaded = getState().topTracks[params.period].feed.length;
     if (loaded) {
       return null
     }
 
-    return dispatch(fetchTopTracks(period));
+    return dispatch(fetchTopTracks(params));
   }
 }
 
@@ -90,24 +91,24 @@ export const TOP_ARTISTS_REQUEST = 'TOP_ARTISTS_REQUEST';
 export const TOP_ARTISTS_SUCCESS = 'TOP_ARTISTS_SUCCESS';
 export const TOP_ARTISTS_FAILURE = 'TOP_ARTISTS_FAILURE';
 
-function fetchTopArtists(period) {
+function fetchTopArtists(params) {
   return {
     [CALL_API]: {
       types: [ TOP_ARTISTS_REQUEST, TOP_ARTISTS_SUCCESS, TOP_ARTISTS_FAILURE ],
       endpoint: 'user.gettopartists',
-      period,
+      params,
     }
   };
 }
 
-export function loadTopArtists(period) {
+export function loadTopArtists(params) {
   return (dispatch, getState) => {
-    const loaded = getState().lists.charts.topArtists[period].length;
+    const loaded = getState().topArtists[params.period].feed.length;
     if (loaded) {
       return null
     }
 
-    return dispatch(fetchTopArtists(period));
+    return dispatch(fetchTopArtists(params));
   }
 }
 

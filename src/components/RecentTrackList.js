@@ -1,6 +1,7 @@
 import React from 'react';
 
 import RecentTrackListItem from './RecentTrackListItem';
+import LoadMoreButton from './LoadMoreButton';
 
 class RecentTrackList extends React.Component {
   render() {
@@ -28,6 +29,7 @@ class RecentTrackList extends React.Component {
         <ul className="list recent-tracks-list">
           {tracks}
         </ul>
+        <LoadMoreButton />
       </section>
     );
   }

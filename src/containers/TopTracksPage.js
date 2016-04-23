@@ -7,12 +7,12 @@ import TopTrackList from '../components/TopTrackList';
 
 class TopTracksPage extends React.Component {
   componentWillMount() {
-    this.props.loadTopTracks(this.props.activeTimeSpan);
+    this.props.loadTopTracks({period: this.props.activeTimeSpan});
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.activeTimeSpan !== nextProps.activeTimeSpan) {
-      this.props.loadTopTracks(nextProps.activeTimeSpan);
+      this.props.loadTopTracks({period: nextProps.activeTimeSpan});
     }
   }
 
@@ -20,7 +20,7 @@ class TopTracksPage extends React.Component {
     return (
       <section className="section">
         <ListHeader title="Top Tracks" />
-        <TopTrackList tracks={this.props.topTracks[this.props.activeTimeSpan]} />
+        <TopTrackList tracks={this.props.topTracks} />
       </section>
     );
   }
@@ -28,16 +28,13 @@ class TopTracksPage extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    topTracks: state.lists.charts.topTracks,
+    topTracks: state.topTracks[state.activeTimeSpan].feed,
     activeTimeSpan: state.activeTimeSpan,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onTimeSpanChange: (span) => {
-      dispatch(changeTimeSpan(span));
-    },
     loadTopTracks: (span) => {
       dispatch(loadTopTracks(span));
     }

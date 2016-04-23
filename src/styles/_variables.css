@@ -6,7 +6,6 @@
 @custom-media --screenMediumOnly (max-width: 739px);
 @custom-media --screenLargeUp (min-width: 740px);
 
-
 :root {
   --titleFont: "Inknut Antiqua", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
   --bodyFont: 'Roboto Mono', monospace;

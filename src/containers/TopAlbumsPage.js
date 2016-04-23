@@ -7,12 +7,12 @@ import AlbumList from '../components/TopAlbumList';
 
 class TopAlbumsPage extends React.Component {
   componentWillMount() {
-    this.props.loadTopAlbums(this.props.activeTimeSpan);
+    this.props.loadTopAlbums({period: this.props.activeTimeSpan});
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.activeTimeSpan !== nextProps.activeTimeSpan) {
-      this.props.loadTopAlbums(nextProps.activeTimeSpan);
+      this.props.loadTopAlbums({period: nextProps.activeTimeSpan});
     }
   }
 
@@ -20,7 +20,7 @@ class TopAlbumsPage extends React.Component {
     return (
       <section className="section">
         <ListHeader title="Top Albums"/>
-        <AlbumList albums={this.props.topAlbums[this.props.activeTimeSpan]} />
+        <AlbumList albums={this.props.topAlbums[this.props.activeTimeSpan].feed} />
       </section>
     );
   }
@@ -28,16 +28,13 @@ class TopAlbumsPage extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    topAlbums: state.lists.charts.topAlbums,
+    topAlbums: state.topAlbums,
     activeTimeSpan: state.activeTimeSpan,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onTimeSpanChange: (span) => {
-      dispatch(changeTimeSpan(span));
-    },
     loadTopAlbums: (span) => {
       dispatch(loadTopAlbums(span));
     }

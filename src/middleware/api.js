@@ -1,5 +1,5 @@
 
-const API_ROOT = "http://ws.audioscrobbler.com/2.0/?format=json&api_key=6084246ab5e1ff9a0d042f39b7f44a3a&extended=1&limit=30&user=kazoo_kid&method=";
+const API_ROOT = "http://ws.audioscrobbler.com/2.0/?format=json&api_key=6084246ab5e1ff9a0d042f39b7f44a3a&extended=1&limit=25&user=kazoo_kid&method=";
 
 // better key naming
 const periodMap = {
@@ -9,11 +9,15 @@ const periodMap = {
   allTime: 'overall',
 };
 
-function callApi(endpoint, period) {
+function callApi(endpoint, params) {
   let fullUrl = (endpoint.indexOf(API_ROOT) === -1) ? API_ROOT + endpoint : endpoint;
 
-  if (period) {
-    fullUrl = `${fullUrl}&period=${periodMap[period]}`;
+  if (params.period) {
+    fullUrl = `${fullUrl}&period=${periodMap[params.period]}`;
+  }
+
+  if (params.page) {
+    fullUrl = `${fullUrl}&page=${params.page}`;
   }
 
   return fetch(fullUrl)
@@ -24,29 +28,8 @@ function callApi(endpoint, period) {
         return Promise.reject(json);
       }
 
-      return santizeResponse(json, endpoint, period);
+      return {response: json, period: params.period};
     });
-}
-
-function santizeResponse(json, endpoint, period) {
-  switch(endpoint) {
-    case 'user.getrecenttracks':
-      return [...json.recenttracks.track];
-    case 'user.gettopalbums':
-      return {
-        topAlbums: {[period]: Object.assign({}, json.topalbums.album)}
-      }
-    case 'user.gettoptracks':
-      return {
-        topTracks: {[period]: Object.assign({}, json.toptracks.track)}
-      }
-    case 'user.gettopartists':
-      return {
-        topArtists: {[period]: Object.assign({}, json.topartists.artist)}
-      }
-    default:
-      return json;
-  }
 }
 
 // Action key that carries API call info interpreted by this Redux middleware.
@@ -61,7 +44,7 @@ export default store => next => action => {
     return next(action);
   }
 
-  const { endpoint, period, types } = callAPI;
+  const { endpoint, params, types } = callAPI;
 
   if (typeof endpoint !== 'string') {
     throw new Error('Specify a string endpoint URL.')
@@ -84,14 +67,19 @@ export default store => next => action => {
 
   next(actionWith({ type: requestType }))
 
-  return callApi(endpoint, period).then(
-    response => next(actionWith({
-      response,
-      type: successType
-    })),
-    error => next(actionWith({
-      type: failureType,
-      error: error.message || 'Something bad happened'
-    }))
+  return callApi(endpoint, params).then(
+    ({response, period}) => {
+      return next(actionWith({
+        response,
+        period,
+        type: successType
+      }));
+    },
+    (error) => {
+      return next(actionWith({
+        type: failureType,
+        error: error.message || 'Something bad happened'
+      }));
+    }
   )
 }
