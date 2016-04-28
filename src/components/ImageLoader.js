@@ -41,7 +41,7 @@ class ImageLoader extends React.Component {
   }
 
   componentDidMount() {
-    if (!this.el) return;
+    if (!this.el || !this.props.imgSrc) return;
 
     const onScroll = debounce(() => {
       this.checkVisibility()
@@ -64,14 +64,14 @@ class ImageLoader extends React.Component {
 
   render() {
     const classes = classnames('img-loader-container', {
-      'no-image': this.props.imgSrc.length === 0,
+      'no-image': !this.props.imgSrc,
       'img-loaded': this.state.imgLoaded,
       [this.props.className]: (this.props.className !== undefined),
     })
 
     return (
       <div className={classes} ref={(el) => this.el = el}>
-        {this.props.imgSrc.length ? <img className="img-loader-img" src={this.state.imgSrc} onLoad={this.onImgLoad.bind(this)} /> : null}
+        {this.props.imgSrc ? <img className="img-loader-img" src={this.state.imgSrc} onLoad={this.onImgLoad.bind(this)} /> : null}
         {this.props.children}
       </div>
     );
@@ -80,7 +80,7 @@ class ImageLoader extends React.Component {
 
 ImageLoader.propTypes = {
   className: React.PropTypes.string,
-  imgSrc: React.PropTypes.string.isRequired,
+  imgSrc: React.PropTypes.string,
 };
 
 export default ImageLoader;

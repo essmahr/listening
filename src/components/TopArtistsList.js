@@ -1,24 +1,31 @@
 import React from 'react';
-
 import TopArtistsListItem from './TopArtistsListItem';
 
 class TopArtistsList extends React.Component {
-  render() {
 
-    const artists = this.props.artists.map((artist, idx) => {
-      const rank = artist['@attr'].rank;
-      return (<TopArtistsListItem
-                key={idx}
-                name={artist.name}
-                image={artist.image[2]['#text']}
-                rank={rank}
-                count={artist.playcount}
-              />);
+  artistsList() {
+    return this.props.artists.map((artist, idx) => {
+      const props = {
+        name: artist.name,
+        image: artist.image[2]['#text'],
+        rank: artist['@attr'].rank,
+        count: artist.playcount,
+      };
+      return (<TopArtistsListItem key={idx} {...props}/>);
     });
+  }
+
+  loaderList() {
+    return Array(25).fill().map((_, idx) => {
+      return (<TopArtistsListItem key={idx} />);
+    });
+  }
+
+  render() {
 
     return (
       <ul className="list top-artists-list">
-        {artists}
+        {this.props.artists.length ? this.artistsList() : this.loaderList()}
       </ul>
     );
   }

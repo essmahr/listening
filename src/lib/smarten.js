@@ -1,4 +1,6 @@
 export default function smarten(string) {
+  if (!string) return;
+
   return string
     /* opening singles */
     .replace(/(^|[-\u2014\s(\["])'/g, "$1\u2018")

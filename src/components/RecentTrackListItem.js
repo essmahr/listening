@@ -11,6 +11,8 @@ class RecentTrackListItem extends React.Component {
   }
 
   timeLabel() {
+    if (!this.timestamp) return;
+
     const dayAgo = new Date().getTime() - (60 * 60 * 12 * 1000);
 
     if (this.timestamp > dayAgo) {
@@ -22,7 +24,6 @@ class RecentTrackListItem extends React.Component {
 
   render() {
     const classNames = ['list-item', 'recent-tracks-list-item'];
-
     if (this.props.firstOfAlbum) { classNames.push('first-of-type'); }
 
     return (
@@ -31,7 +32,7 @@ class RecentTrackListItem extends React.Component {
           <div className="recent-track-artist">{this.props.artist}</div>
           <div className="recent-track-song">
             <span className="recent-track-title">{smarten(this.props.name)}</span>
-            <div className="recent-track-album">{this.props.album['#text']}</div>
+            <div className="recent-track-album">{this.props.album}</div>
           </div>
         </div>
         <span className="recent-track-timestamp">{this.timeLabel()}</span>

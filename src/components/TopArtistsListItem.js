@@ -2,8 +2,19 @@ import React from 'react';
 import ImageLoader from './ImageLoader';
 
 class TopArtistsListItem extends React.Component {
+  playCount() {
+    if (!this.props.count) return;
+
+    return (
+      <div className="top-artist-playcount">
+        <strong className="top-artist-playcount-count">{this.props.count}</strong>
+        <span className="top-artist-playcount-label"> Plays</span>
+      </div>
+    );
+  }
+
   render() {
-    const {name, rank, image, count} = this.props;
+    const {name, rank, image} = this.props;
 
     return (
       <li className="list-item top-artists-list-item">
@@ -14,10 +25,7 @@ class TopArtistsListItem extends React.Component {
         </div>
         <div className="top-artist-info-container">
           <h1 className="top-artist-name">{name}</h1>
-          <div className="top-artist-playcount">
-            <strong className="top-artist-playcount-count">{count}</strong>
-            <span className="top-artist-playcount-label"> Plays</span>
-          </div>
+          {this.playCount()}
         </div>
       </li>
     )

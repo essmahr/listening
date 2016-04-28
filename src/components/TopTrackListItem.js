@@ -1,8 +1,19 @@
 import React from 'react';
 
 class TrackListItem extends React.Component {
+  playCount() {
+    if (!this.props.count) return;
+
+    return (
+      <div className="top-track-playcount">
+        <strong className="top-track-playcount-count">{this.props.count}</strong>
+        <span className="top-track-playcount-label"> Plays</span>
+      </div>
+    );
+  }
+
   render() {
-    const {track, artist, album, count, rank} = this.props;
+    const {track, artist, album, rank} = this.props;
 
     return (
       <li className="list-item top-tracks-list-item">
@@ -16,10 +27,7 @@ class TrackListItem extends React.Component {
             <h1 className="top-track-name">{track}</h1>
             <h2 className="top-track-artist">{artist}</h2>
           </div>
-          <div className="top-track-playcount">
-            <strong className="top-track-playcount-count">{count}</strong>
-            <span className="top-track-playcount-label"> Plays</span>
-          </div>
+          {this.playCount()}
         </div>
       </li>
     )
