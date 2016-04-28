@@ -40,7 +40,7 @@ class TimeSpanMenu extends React.Component {
             <span className="pr">Past </span>
             Week
           </span>
-          <span className="shr">wk</span>
+          <span className="shr">1wk</span>
         </TimeSpanButton>
         <TimeSpanButton isActive={activeTimeSpan === 'month'} timeSpan='month' onClick={this.onClick.bind(this)}>
           <span className="fl">
@@ -61,7 +61,7 @@ class TimeSpanMenu extends React.Component {
             <span className="pr">Past </span>
             Year
           </span>
-          <span className="shr">yr</span>
+          <span className="shr">12mo</span>
         </TimeSpanButton>
         <TimeSpanButton isActive={activeTimeSpan === 'allTime'} timeSpan='allTime' onClick={this.onClick.bind(this)}>
           <span className="fl">All-Time</span>
