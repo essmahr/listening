@@ -1,12 +1,12 @@
 .section {
-  padding: 0 40px;
+  @extend %outer-padding;
   margin-bottom: 60px;
 }
 
 .section-header {
   margin-bottom: 20px;
 
-  @media (--screenLargeUp) {
+  @media (min-width: 910px) {
     display: flex;
     margin-bottom: 40px;
   }
@@ -24,18 +24,18 @@
     font-size: calc(1em * 38 / 16);
   }
 
-  @media (--screenMediumOnly) {
+  @media (max-width: 909px) {
     text-align: center;
   }
 
-  @media (--screenLargeUp) {
+  @media (min-width: 910px) {
     flex-grow: 1;
     font-size: calc(1em * 42 / 16);
   }
 }
 
 .timespan-menu {
-  @media (--screenMediumOnly) {
+  @media (max-width: 909px) {
     display: flex;
     margin-top: 40px;
   }
@@ -54,11 +54,19 @@
   cursor: pointer;
   color: var(--greyDark);
 
-  @media (--screenMediumOnly) {
+  @media (max-width: 909px) {
     flex: 1;
   }
 
-  @media (--screenLargeUp) {
+  @media (--screenMediumOnly) {
+    & .pr { display: none; }
+  }
+
+  @media (--screenMediumUp) {
+    & .shr { display: none; }
+  }
+
+  @media (min-width: 910px) {
     margin-left: 2em;
   }
 
@@ -83,12 +91,13 @@
       width: 16px;
     }
 
-    path {
-      stroke-width: 9px;
+    & path {
+      stroke-width: 12px;
+      stroke: var(--greyDark);
     }
 
     &.active path {
-      stroke-width: 15px;
+      stroke-width: 18px;
       stroke: var(--accent);
     }
   }

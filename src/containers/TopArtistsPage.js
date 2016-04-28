@@ -18,7 +18,7 @@ class TopArtistsPage extends React.Component {
 
   render() {
     return (
-      <section className="section" key="topArtists">
+      <section className="section">
         <ListHeader title="Top Artists"/>
         <TopArtistsList artists={this.props.topArtists} />
       </section>

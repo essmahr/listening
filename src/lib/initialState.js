@@ -7,6 +7,10 @@ export default {
     page: 1,
     feed: [],
   },
+  sixMonths: {
+    page: 1,
+    feed: [],
+  },
   year: {
     page: 1,
     feed: [],

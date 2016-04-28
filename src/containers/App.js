@@ -10,7 +10,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <ProgressBar/>
         <Header/>
         {this.props.children}
       </div>

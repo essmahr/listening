@@ -36,6 +36,7 @@
 
 .recent-track-artist {
   @extend header-4;
+  @extend %never-empty;
   opacity: 0.6;
 
   @media (--screenLargeUp) {
@@ -44,22 +45,27 @@
 }
 
 .recent-track-song {
+  @extend %never-empty;
+
   @media (--screenLargeUp) {
     lost-column: 6/9;
   }
 }
 
 .recent-track-title {
+  @extend %never-empty;
   @extend header-4;
 }
 
 .recent-track-album {
+  @extend %never-empty;
   margin-top: 4px;
   font-size: 10px;
   font-weight: 400;
 }
 
 .recent-track-timestamp {
+  @extend %never-empty;
   font-size: 14px;
   line-height: 38px;
 
@@ -171,6 +177,8 @@
 }
 
 .top-track-song {
+  @extend %never-empty;
+
   @media (--screenMediumUp) {
     lost-column: 8/12;
   }
@@ -189,10 +197,14 @@
 }
 
 .top-track-name {
+  @extend %never-empty;
   @extend header-3;
   margin-bottom: 4px;
 }
 
+.top-track-artist {
+  @extend %never-empty;
+}
 
 /* ----- Top Artists ---- */
 

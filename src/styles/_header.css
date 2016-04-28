@@ -1,5 +1,5 @@
 .site-header {
-  padding: 0 40px;
+  @extend %outer-padding;
 
   @media (--screenMediumOnly) {
     margin-bottom: 40px;
@@ -25,13 +25,13 @@
   color: var(--greyDark);
 }
 
-.now-playing-artist {
+.now-playing-title {
   font-size: calc(1em * 22 / 16);
   font-family: var(--titleFont);
   margin: 6px 0;
 }
 
-.now-playing-title {}
+.now-playing-artist {}
 
 
 /* Menu */

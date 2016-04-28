@@ -16,7 +16,7 @@ class RecentTracksPage extends React.Component {
 
   render() {
     return (
-      <section className="section" key="recentTracks">
+      <section className="section">
         <header className="section-header">
           <h1 className="section-title">Recent Tracks</h1>
         </header>

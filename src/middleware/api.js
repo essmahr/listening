@@ -5,6 +5,7 @@ const API_ROOT = "http://ws.audioscrobbler.com/2.0/?format=json&api_key=6084246a
 const periodMap = {
   week: '7day',
   month: '1month',
+  sixMonths: '6month',
   year: '12month',
   allTime: 'overall',
 };

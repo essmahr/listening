@@ -29,3 +29,21 @@
 @define-placeholder text-small {
   font-size: calc(1em * 14 / 16);
 }
+
+%never-empty {
+  &:empty:before {
+    content: "\200b";
+  }
+}
+
+%outer-padding {
+  padding: 0 20px;
+
+  @media (--screenMediumUp) {
+    padding: 0 30px;
+  }
+
+  @media (--screenLargeUp) {
+    padding: 0 40px;
+  }
+}

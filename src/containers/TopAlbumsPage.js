@@ -18,7 +18,7 @@ class TopAlbumsPage extends React.Component {
 
   render() {
     return (
-      <section className="section" key="topAlbums">
+      <section className="section">
         <ListHeader title="Top Albums"/>
         <AlbumList albums={this.props.topAlbums[this.props.activeTimeSpan].feed} />
       </section>
