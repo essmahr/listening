@@ -7,7 +7,7 @@ class RecentTrackList extends React.Component {
       if (track.date === undefined) return;
 
       const props = {
-        isFirstOfAlbum: idx !== 0 && track.album['#text'] !== this.props.tracks[idx - 1].album['#text'],
+        firstOfAlbum: idx !== 0 && track.album['#text'] !== this.props.tracks[idx - 1].album['#text'],
         name: track.name,
         artist: track.artist.name,
         album: track.album['#text'],
@@ -20,7 +20,7 @@ class RecentTrackList extends React.Component {
 
   loaderList() {
     return Array(25).fill().map((_, idx) => {
-      return (<RecentTrackListItem key={idx} />);
+      return (<RecentTrackListItem key={`${idx}-loading`} />);
     });
   }
 
