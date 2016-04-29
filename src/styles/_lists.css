@@ -1,16 +1,16 @@
 .list {
-  margin: 10px 0;
+  margin: rem(10) 0;
   border-bottom: 1px solid var(--greyMedium);
 }
 
 .list-item {
   align-items: center;
   border-top: 1px solid var(--greyMedium);
-  padding: 16px 0;
+  padding: rem(16) 0;
   lost-flex-container: row;
 
   @media (--screenMediumUp) {
-    padding: calc(8px + 1.5vh) 0;
+    padding: calc(rem(8) + 1.5vh) 0;
   }
 
   &.first-of-type {
@@ -59,15 +59,15 @@
 
 .recent-track-album {
   @extend %never-empty;
-  margin-top: 4px;
-  font-size: 10px;
+  margin-top: rem(4);
+  font-size: rem(10);
   font-weight: 400;
 }
 
 .recent-track-timestamp {
   @extend %never-empty;
-  font-size: 14px;
-  line-height: 38px;
+  font-size: rem(14);
+  line-height: rem(38);
 
   @media (--screenMediumUp) {
     lost-column: 4/12;
@@ -83,10 +83,10 @@
 /* ----- Top Albums ---- */
 
 .top-albums-list-item {
-  padding: 16px 0;
+  padding: rem(16) 0;
 
   @media (--screenMediumUp) {
-    padding: calc(16px + 2vh) 0;
+    padding: calc(rem(16) + 2vh) 0;
   }
 }
 
@@ -101,13 +101,13 @@
 
   @media (--screenMediumUp) {
     flex: 1;
-    max-width: 160px;
-    margin-right: 32px;
+    max-width: rem(160);
+    margin-right: rem(32);
   }
 }
 
 .top-album-name {
-  @extend header-2;
+  @extend %header-2;
 }
 
 .top-album-artist {
@@ -127,12 +127,12 @@
 }
 
 .top-albums-playcount {
-  margin-top: 2px;
+  margin-top: rem(2);
 }
 
 .top-albums-playcount-label {
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: rem(10);
   letter-spacing: 0.1em;
   font-weight: 400;
 }
@@ -145,20 +145,20 @@
 }
 
 .top-track-rank-container {
-  width: 48px;
-  margin-right: 18px;
+  width: rem(48);
+  margin-right: rem(18);
 }
 
 .top-track-rank {
   @media (--screenSmallOnly) {
-    font-size: 32px;
+    font-size: rem(32);
     font-weight: 400;
     opacity: 0.6;
     text-align: center;
   }
 
   @media (--screenMediumUp) {
-    font-size: 24px;
+    font-size: rem(24);
   }
 }
 
@@ -186,8 +186,8 @@
 
 .top-track-playcount {
   @media (--screenSmallOnly) {
-    margin-bottom: 4px;
-    font-size: 14px;
+    margin-bottom: rem(4);
+    font-size: rem(14);
   }
 
   @media (--screenMediumUp) {
@@ -199,7 +199,7 @@
 .top-track-name {
   @extend %never-empty;
   @extend header-3;
-  margin-bottom: 4px;
+  margin-bottom: rem(4);
 }
 
 .top-track-artist {
@@ -215,8 +215,8 @@
 
   @media (--screenMediumUp) {
     flex: 1;
-    max-width: 96px;
-    margin-right: 32px;
+    max-width: rem(96);
+    margin-right: rem(32);
   }
 }
 
@@ -233,7 +233,11 @@
 }
 
 .top-artist-name {
-  @extend header-2;
+  @extend %header-2;
+
+  @media (--screenSmallOnly) {
+    margin-bottom: rem(4);
+  }
 
   @media (--screenMediumUp) {
     lost-column: 5/8;

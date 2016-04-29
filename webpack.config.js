@@ -6,6 +6,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 
 const postcssImport = require('postcss-import');
+const cssFunctions = require('postcss-functions');
 const cssExtend = require('postcss-extend');
 const cssNext = require('postcss-cssnext');
 const lostGrid = require('lost');
@@ -44,6 +45,13 @@ const common = {
     return [
       postcssImport({
         addDependencyTo: webpack,
+      }),
+      cssFunctions({
+        functions: {
+          rem: function(val) {
+            return `${val / 16}rem`;
+          }
+        }
       }),
       cssExtend(),
       cssNext({}),

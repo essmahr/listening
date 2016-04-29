@@ -1,14 +1,14 @@
 .section {
   @extend %outer-padding;
-  margin-bottom: 60px;
+  margin-bottom: rem(60);
 }
 
 .section-header {
-  margin-bottom: 20px;
+  margin-bottom: rem(20);
 
   @media (min-width: 910px) {
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: rem(40);
   }
 }
 
@@ -37,7 +37,7 @@
 .timespan-menu {
   @media (max-width: 909px) {
     display: flex;
-    margin-top: 40px;
+    margin-top: rem(40);
   }
 
   @media (--screenMediumUp) {
@@ -88,16 +88,16 @@
 
     & svg {
       display: inline-block;
-      width: 16px;
+      width: rem(16);
     }
 
     & path {
-      stroke-width: 12px;
+      stroke-width: rem(12);
       stroke: var(--greyDark);
     }
 
     &.active path {
-      stroke-width: 18px;
+      stroke-width: rem(18);
       stroke: var(--accent);
     }
   }
@@ -110,8 +110,8 @@
 
 .button-to-top {
   display: block;
-  margin-left: 32px;
-  width: 64px;
+  margin-left: rem(32);
+  width: rem(64);
   background: none;
   border: 1px solid var(--greyMedium);
 

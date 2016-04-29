@@ -1,17 +1,21 @@
 @define-placeholder header-1 {
-  font-size: calc(1em * 42 / 16);
+  font-size: rem(42);
   font-family: var(--titleFont);
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
-@define-placeholder header-2 {
-  font-size: calc(1em * 28 / 16);
+%header-2 {
+  font-size: rem(24);
   font-family: var(--titleFont);
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 1.2;
+
+  @media (--screenLargeUp) {
+    font-size: rem(28);
+  }
 }
 
 @define-placeholder header-3 {
