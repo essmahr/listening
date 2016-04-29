@@ -43,7 +43,7 @@
   right: 0;
   top: 50%;
   line-height: 1;
-  margin-top: -24px;
+  margin-top: rem(-24);
   text-align: center;
   color: #FFF;
   font-weight: 400;

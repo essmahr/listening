@@ -1,5 +1,13 @@
 html {
   box-sizing: border-box;
+
+  @media screen and (--screenSmallOnly) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1300px) {
+    font-size: 17px;
+  }
 }
 
 *,
@@ -33,11 +41,6 @@ img {
   vertical-align: middle;
 }
 
-.container {
-  lost-center: var(--maxWidth) no-flex;
-  padding: 0 20px;
-}
-
 h1,
 h2,
 h3,
@@ -53,9 +56,9 @@ h6 {
   border: 0;
   display: block;
   width: 100%;
-  padding: 10px 0;
+  padding: rem(10) 0;
   cursor: pointer;
-  font-size: 14px;
+  font-size: rem(14);
   border-radius: 4px;
   background: var(--greyLight);
   border: 1px solid transparent;
