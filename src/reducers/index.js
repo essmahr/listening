@@ -29,7 +29,7 @@ function isFetching(state = false, action) {
     case 'TOP_ARTISTS_FAILURE':
     case 'RECENT_TRACKS_SUCCESS':
     case 'RECENT_TRACKS_FAILURE':
-      return false
+      return false;
     default:
       return state;
   }

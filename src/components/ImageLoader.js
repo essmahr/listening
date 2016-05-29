@@ -29,7 +29,7 @@ class ImageLoader extends React.Component {
 
   isInViewport() {
     var rect = this.el.getBoundingClientRect();
-    return (rect.bottom - 60) <= (window.innerHeight || document.documentElement.clientHeight);
+    return (rect.bottom - 20) <= (window.innerHeight || document.documentElement.clientHeight);
   }
 
   checkVisibility() {

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../containers/Header';
 import ProgressBar from '../components/ProgressBar';
+import LoaderWrapper from '../components/LoaderWrapper';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,10 +10,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <LoaderWrapper>
         <Header/>
         {this.props.children}
-      </div>
+      </LoaderWrapper>
     );
   }
 }

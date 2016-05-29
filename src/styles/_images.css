@@ -13,6 +13,7 @@
   &.no-image {
     background: none;
     border: 2px solid var(--greyLight);
+    margin: -2px 0;
   }
 
   &.img-loaded {
