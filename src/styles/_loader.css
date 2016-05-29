@@ -1,0 +1,84 @@
+.loader-fade-enter {
+  opacity: 0.01;
+}
+
+.loader-fade-enter.loader-fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in-out;
+}
+
+.loader-fade-leave {
+  opacity: 1;
+}
+
+.loader-fade-leave.loader-fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in-out;
+}
+
+.loading-overlay {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -20px -40px;
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+
+  & > div {
+    display: inline-block;
+    width: 2px;
+    border-radius: 1px;
+    margin: 0 4px;
+    height: 100%;
+    background-color: var(--greyMedium);
+    animation: sk-stretchdelay 1.6s infinite ease-in-out;
+  }
+}
+
+.spinner .rect2 {
+  animation-delay: -1.4s;
+}
+
+.spinner .rect4 {
+  animation-delay: -1.2s;
+}
+
+.spinner .rect6 {
+  animation-delay: -1s;
+}
+
+.spinner .rect8 {
+  animation-delay: -0.8s;
+}
+
+.spinner .rect3 {
+  animation-delay: -0.6s;
+}
+
+.spinner .rect5 {
+  animation-delay: -0.4s;
+}
+
+.spinner .rect7 {
+  animation-delay: -0.2s;
+}
+
+@keyframes sk-stretchdelay {
+  0%, 100% {
+    transform: scaleY(0.5);
+  }  40% {
+    transform: scaleY(1.0);
+  }
+}

@@ -58,6 +58,7 @@ export default store => next => action => {
   if (!Array.isArray(types) || types.length !== 3) {
     throw new Error('Expected an array of three action types.')
   }
+
   if (!types.every(type => typeof type === 'string')) {
     throw new Error('Expected action types to be strings.')
   }
@@ -70,7 +71,7 @@ export default store => next => action => {
 
   const [ requestType, successType, failureType ] = types;
 
-  next(actionWith({ type: requestType }))
+  next(actionWith({ type: requestType }));
 
   return callApi(endpoint, params).then(
     ({response, period, page}) => {
@@ -78,13 +79,13 @@ export default store => next => action => {
         response,
         period,
         page,
-        type: successType
+        type: successType,
       }));
     },
     (error) => {
       return next(actionWith({
         type: failureType,
-        error: error.message || 'Something bad happened'
+        error: error.message || 'Something bad happened',
       }));
     }
   )
