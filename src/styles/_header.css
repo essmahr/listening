@@ -1,5 +1,11 @@
 .site-header {
   @extend %outer-padding;
+  transition: opacity 0.5s ease 0.2s;
+  opacity: 0;
+
+  @nest .loaded & {
+    opacity: 1;
+  }
 
   @media (--screenMediumOnly) {
     margin-bottom: 40px;

@@ -16,6 +16,8 @@ class LoaderWrapper extends React.Component {
       window.setTimeout(() => {
         this.setState({
           firstLoadComplete: true,
+        }, () => {
+          document.body.className = 'loaded';
         });
       }, 700);
     }

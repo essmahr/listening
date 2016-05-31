@@ -1,6 +1,14 @@
 .section {
   @extend %outer-padding;
   margin-bottom: rem(60);
+  transition: opacity 0.4s ease-out 0.5s, transform 0.4s ease-out 0.5s;
+  opacity: 0;
+  transform: translateY(3vh);
+
+  @nest .loaded & {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .section-header {
