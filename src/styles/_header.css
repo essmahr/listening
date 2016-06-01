@@ -1,10 +1,11 @@
 .site-header {
-  @extend %outer-padding;
-  transition: opacity 0.5s ease 0.2s;
+  transition: opacity 0.4s ease 0.2s, transform 0.4s ease 0.2s;
   opacity: 0;
+  transform: translateY(-3vh);
 
   @nest .loaded & {
     opacity: 1;
+    transform: translateY(0);
   }
 
   @media (--screenMediumOnly) {
@@ -22,7 +23,20 @@
 .now-playing {
   padding: 2em 0;
   text-align: center;
-  border-bottom: 1px solid var(--greyMedium);
+  background-image: svg-load(../svg/sine.svg, stroke: #FAF8F7);
+  background-repeat: repeat-x;
+  background-size: 300px 66px;
+  background-position: 0 center;
+  animation: sine-slide 10s linear infinite;
+}
+
+@keyframes sine-slide {
+  from {
+    background-position: 0 center;
+  }
+  to {
+    background-position: 300px center;
+  }
 }
 
 .now-playing-wrapper {}
@@ -41,10 +55,17 @@
 
 
 /* Menu */
+.menu-outer {
+  @extend %outer-padding;
+}
 
 .menu {
   lost-flex-container: row;
   border-bottom: 1px solid var(--greyMedium);
+
+  @nest .now-playing + .menu-outer & {
+    border-top: 1px solid var(--greyMedium);
+  }
 }
 
 .menu-link {

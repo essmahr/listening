@@ -19,7 +19,7 @@ class LoaderWrapper extends React.Component {
         }, () => {
           document.body.className = 'loaded';
         });
-      }, 700);
+      }, 500);
     }
   }
 
