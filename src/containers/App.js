@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../containers/Header';
-import ProgressBar from '../components/ProgressBar';
+import AboutBlurb from '../components/AboutBlurb';
 import LoaderWrapper from '../components/LoaderWrapper';
 
 class App extends React.Component {
@@ -19,7 +19,6 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  // Injected by React Router
   children: React.PropTypes.node
 };
 
