@@ -27,6 +27,11 @@ body {
   line-height: 1.5;
   font-weight: 300;
   background-color: var(--backgroundColor);
+
+  &.scroll-lock {
+    overflow: hidden;
+    margin-bottom: rem(124);
+  }
 }
 
 ul,

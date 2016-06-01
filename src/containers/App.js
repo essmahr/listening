@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../containers/Header';
-import AboutBlurb from '../components/AboutBlurb';
+import About from '../components/About';
 import LoaderWrapper from '../components/LoaderWrapper';
 
 class App extends React.Component {
@@ -13,6 +13,7 @@ class App extends React.Component {
       <LoaderWrapper>
         <Header/>
         {this.props.children}
+        <About/>
       </LoaderWrapper>
     );
   }
