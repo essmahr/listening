@@ -82,3 +82,40 @@
     transform: scaleY(1.0);
   }
 }
+
+.dots {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -3px 0 0 -15px;
+  width: 30px;
+  line-height: 6px;
+  text-align: center;
+
+  & > div {
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    background-color: color(var(--greyMedium) shade(10%));
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  }
+}
+
+.dots .dot1 {
+  animation-delay: -0.32s;
+}
+
+.dots .dot2 {
+  animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.5);
+  } 40% {
+    transform: scale(1.0);
+  }
+}

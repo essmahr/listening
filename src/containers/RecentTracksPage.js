@@ -21,7 +21,7 @@ class RecentTracksPage extends React.Component {
           <h1 className="section-title">Recent Tracks</h1>
         </header>
         <RecentTrackList tracks={this.props.recentTracks} />
-        <LoadMoreButton onClick={this.loadMore.bind(this)} />
+        <LoadMoreButton isFetching={this.props.isFetching} onClick={this.loadMore.bind(this)} />
       </section>
     );
   }
@@ -30,6 +30,7 @@ class RecentTracksPage extends React.Component {
 function mapStateToProps(state, ownProps) {
   return {
     recentTracks: state.recentTracks.feed,
+    isFetching: state.isFetching,
   }
 }
 

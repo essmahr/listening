@@ -128,13 +128,14 @@
 }
 
 .button-load-more {
+  position: relative;
   width: 100%;
 
   &:hover {
-    background: var(--greyMedium);
+    background: color(var(--greyLight) shade(5%));
   }
 
   &:active {
-    background: color(var(--greyMedium) shade(5%));
+    background: color(var(--greyLight) shade(10%));
   }
 }

@@ -17,8 +17,8 @@
 }
 
 .button-container {
-  text-align: center;
   padding: rem(80) 0;
+  text-align: center;
 }
 
 .about-launch {
@@ -30,16 +30,12 @@
   line-height: rem(14, 14);
   color: inherit;
   border-radius: 50%;
-  font-size: rem(14, 16);
+  font-size: 14px;
   cursor: pointer;
   color: var(--greyDark);
 
   &:focus {
     outline: 0;
-  }
-
-  @nest .scroll-lock & {
-    color: #fff;
   }
 }
 
