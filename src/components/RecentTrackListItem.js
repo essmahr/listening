@@ -1,7 +1,7 @@
 import React from 'react';
-import TimeAgo from 'react-timeago';
-import smarten from '../lib/smarten'
-import moment from 'moment';
+import smarten from '../lib/smarten';
+import timeAgo from '../lib/timeAgo';
+import dateFormat from 'dateformat';
 
 class RecentTrackListItem extends React.Component {
   constructor(props) {
@@ -16,9 +16,9 @@ class RecentTrackListItem extends React.Component {
     const dayAgo = new Date().getTime() - (60 * 60 * 12 * 1000);
 
     if (this.timestamp > dayAgo) {
-      return moment(this.timestamp).fromNow();
+      return timeAgo(this.timestamp);
     } else {
-      return moment(this.timestamp).format('MMMM D h:mma');
+      return dateFormat(this.timestamp, 'mmmm dS, h:MM tt');
     }
   }
 

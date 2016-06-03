@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.3",
+    "dateformat": "^1.0.12",
     "dotenv": "^2.0.0",
     "exports-loader": "^0.6.3",
     "imports-loader": "^0.6.5",

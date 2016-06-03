@@ -1,5 +1,3 @@
-console.log("Building for " + process.env.NODE_ENV);
-
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -13,6 +11,7 @@ const lostGrid = require('lost');
 const inlineSVG = require('postcss-inline-svg');
 
 const TARGET = process.env.npm_lifecycle_event;
+
 const PATHS = {
   src: path.join(__dirname, 'src'),
   build: path.join(__dirname, 'build')
@@ -23,7 +22,10 @@ process.env.BABEL_ENV = TARGET;
 const common = {
   entry: PATHS.src,
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css']
+    extensions: ['', '.js', '.jsx', '.css'],
+    alias: {
+      moment: 'moment/moment.js',
+    },
   },
   module: {
     loaders: [
@@ -116,8 +118,10 @@ if (TARGET === 'build') {
       path: PATHS.build,
       filename:'bundle.min.js'
     },
+    devtool: 'source-map',
     plugins: [
       new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.DedupePlugin(),
       new webpack.DefinePlugin({
         'process.env': {
           'NODE_ENV': JSON.stringify('production')
