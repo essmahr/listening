@@ -17,7 +17,7 @@ class RecentTracksPage extends React.Component {
   render() {
     return (
       <section className="section">
-        <header className="section-header">
+        <header className="section-header no-tabs">
           <h1 className="section-title">Recent Tracks</h1>
         </header>
         <RecentTrackList tracks={this.props.recentTracks} />
