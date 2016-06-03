@@ -23,9 +23,6 @@ const common = {
   entry: PATHS.src,
   resolve: {
     extensions: ['', '.js', '.jsx', '.css'],
-    alias: {
-      moment: 'moment/moment.js',
-    },
   },
   module: {
     loaders: [

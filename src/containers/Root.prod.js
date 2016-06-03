@@ -2,13 +2,20 @@ import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import routes from '../routes';
 import { Router } from 'react-router';
+import ga from 'react-ga';
+
+ga.initialize('UA-78738223-1');
+
+function logPageView() {
+  ga.pageview(window.location.pathname);
+}
 
 export default class Root extends Component {
   render() {
     const { store, history } = this.props;
     return (
       <Provider store={store}>
-        <Router history={history} routes={routes} />
+        <Router history={history} routes={routes} onUpdate={logPageView}/>
       </Provider>
     );
   }
