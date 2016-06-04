@@ -1,4 +1,4 @@
-@lost gutter rem(32);
+@lost gutter rem(16);
 @lost flexbox flex;
 
 @custom-media --screenSmallOnly (max-width: 499px);

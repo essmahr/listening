@@ -64,7 +64,7 @@ h6 {
   padding: rem(10) 0;
   cursor: pointer;
   font-size: rem(14);
-  border-radius: 4px;
+  border-radius: 2px;
   background: var(--greyLight);
   border: 1px solid transparent;
 

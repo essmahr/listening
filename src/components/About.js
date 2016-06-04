@@ -12,7 +12,7 @@ class AboutModal extends React.Component {
         <div className="about-inner" onClick={evt => {evt.stopPropagation()}}>
           <p>I'm using <a href="http://www.last.fm/">Last.fm</a>'s API to pull in my music listening history, where I've been tracking song plays since October 2007.</p>
           <p>If any of the totals are looking weird, it's because Last.fm's API is occasionally a piece of crap.</p>
-          <p>Really though, the site is an opportunity for me to experiment and learn more about <a href="https://facebook.github.io/react/">React</a> and especially <a href="http://redux.js.org/">Redux</a>. It was developed and compiled with webpack, and the CSS is preprocessed with some postcss sugar which I'm not completely sold on, including <a href="http://cssnext.io/">cssnext</a> and <a href="https://github.com/peterramsing/lost">Lost</a>.</p>
+          <p>Really though, the site is an opportunity for me to experiment and learn more about <a href="https://facebook.github.io/react/">React</a> and especially <a href="http://redux.js.org/">Redux</a>. It was developed and compiled with webpack, and styled with help from <a href="http://cssnext.io/">cssnext</a> and <a href="https://github.com/peterramsing/lost">Lost</a>.</p>
           <p className="lower">
             A <a href="http://smahr.net">smahr.net</a> project / <a href="https://github.com/essmahr/listening">Github</a>
           </p>

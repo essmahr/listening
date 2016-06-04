@@ -26,7 +26,7 @@
 }
 
 @define-placeholder header-4 {
-  font-size: calc(1em * 18 / 16);
+  font-size: calc(1em * 16 / 16);
   font-weight: 300;
 }
 
@@ -42,7 +42,7 @@
 
 %outer-padding {
   max-width: rem(1100);
-  padding: 0 14px;
+  padding: 0 20px;
   margin: 0 auto;
 
   @media (--screenMediumUp) {
