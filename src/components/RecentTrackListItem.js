@@ -18,7 +18,7 @@ class RecentTrackListItem extends React.Component {
     if (this.timestamp > dayAgo) {
       return timeAgo(this.timestamp);
     } else {
-      return dateFormat(this.timestamp, 'mmmm dS, h:MM tt');
+      return dateFormat(this.timestamp, 'mmmm dS, h:MMtt');
     }
   }
 

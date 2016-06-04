@@ -3,7 +3,7 @@ import scrollTo from '../lib/scrollTo';
 
 export default function LoadMoreButton(props) {
   function toTop() {
-    scrollTo(document.body, 0, 400);
+    scrollTo(document.body, 0, 300);
   }
 
   function spinner() {

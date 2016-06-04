@@ -1,6 +1,6 @@
 import config from '../../config';
 
-const API_ROOT = `http://ws.audioscrobbler.com/2.0/?format=json&api_key=${config.lastfmApiKey}&extended=1&limit=25&user=${config.lastfmUser}&method=`;
+const API_ROOT = `http://ws.audioscrobbler.com/2.0/?format=json&api_key=${config.lastfmApiKey}&extended=1&user=${config.lastfmUser}&method=`;
 
 // better key naming
 const periodMap = {
@@ -12,9 +12,11 @@ const periodMap = {
 };
 
 function callApi(endpoint, params) {
-  console.log(endpoint, params);
 
   let fullUrl = (endpoint.indexOf(API_ROOT) === -1) ? API_ROOT + endpoint : endpoint;
+
+  const limit = endpoint === 'user.getrecenttracks' ? 50 : 25;
+  fullUrl = `${fullUrl}&limit=${limit}`;
 
   if (params.period) {
     fullUrl = `${fullUrl}&period=${periodMap[params.period]}`;
