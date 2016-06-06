@@ -1,4 +1,5 @@
 import React from 'react';
+import playCount from '../lib/playCount';
 
 class TrackListItem extends React.Component {
   playCount() {
@@ -7,7 +8,7 @@ class TrackListItem extends React.Component {
     return (
       <div className="top-track-playcount">
         <strong className="top-track-playcount-count">{this.props.count}</strong>
-        <span className="top-track-playcount-label"> Plays</span>
+        <span className="top-track-playcount-label"> {playCount(this.props.count)}</span>
       </div>
     );
   }

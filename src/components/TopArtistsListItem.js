@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageLoader from './ImageLoader';
+import playCount from '../lib/playCount';
 
 class TopArtistsListItem extends React.Component {
   playCount() {
@@ -8,7 +9,7 @@ class TopArtistsListItem extends React.Component {
     return (
       <div className="top-artist-playcount">
         <strong className="top-artist-playcount-count">{this.props.count}</strong>
-        <span className="top-artist-playcount-label"> Plays</span>
+        <span className="top-artist-playcount-label"> {playCount(this.props.count)}</span>
       </div>
     );
   }
