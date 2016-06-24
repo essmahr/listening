@@ -13,8 +13,12 @@ Add a `./config.js` that exports your last.fm username and an [API Key](http://w
 module.exports = {
   lastfmUser: 'username',
   lastfmApiKey: 'api_key',
+  googleAnalyticsKey: 'your_key'
 }
 ```
+
+An analytics key is required, but only for production builds (`npm build`)
+
 
 ## Up and running
 
