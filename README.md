@@ -7,7 +7,7 @@ My starting point for this was the "[real world](https://github.com/reactjs/redu
 
 ## Configuration
 
-Add a `./config.json` that exports your last.fm username and an [API Key](http://www.last.fm/api/account/create) like so:
+Add a `./config.js` that exports your last.fm username and an [API Key](http://www.last.fm/api/account/create) like so:
 
 ```
 module.exports = {
