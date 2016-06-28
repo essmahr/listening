@@ -5,26 +5,26 @@ export default function(date) {
   var interval = Math.floor(seconds / 31536000);
 
   if (interval >= 1) {
-    intervalType = "year";
+    intervalType = 'year';
   } else {
     interval = Math.floor(seconds / 2592000);
     if (interval >= 1) {
-      intervalType = "month";
+      intervalType = 'month';
     } else {
       interval = Math.floor(seconds / 86400);
       if (interval >= 1) {
-        intervalType = "day";
+        intervalType = 'day';
       } else {
         interval = Math.floor(seconds / 3600);
         if (interval >= 1) {
-          intervalType = "hour";
+          intervalType = 'hour';
         } else {
           interval = Math.floor(seconds / 60);
           if (interval >= 1) {
-            intervalType = "minute";
+            intervalType = 'minute';
           } else {
             interval = seconds;
-            intervalType = "second";
+            intervalType = 'second';
           }
         }
       }
@@ -32,9 +32,9 @@ export default function(date) {
   }
 
   if (interval > 1 || interval === 0) {
-    intervalType += "s";
+    intervalType += 's';
   }
 
-  return interval + " " + intervalType + " ago";
+  return `${interval} ${intervalType} ago`;
 
 }
