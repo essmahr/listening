@@ -6,7 +6,7 @@ import topAlbums from './topAlbumsReducer';
 import topArtists from './topArtistsReducer';
 import recentTracks from './recentTracksReducer';
 
-function activeTimeSpan(state = 'allTime', action) {
+function activeTimeSpan(state = 'week', action) {
   if (action.type === 'TIME_SPAN_CHANGE') {
     return action.timeSpan;
   }
