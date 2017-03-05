@@ -21,22 +21,21 @@
 /*  Now Playing */
 
 .now-playing {
+  position: relative;
   padding: 2em 0;
   text-align: center;
-  background-image: svg-load(../svg/sine.svg, stroke: #FAF8F7);
-  background-repeat: repeat-x;
-  background-size: 300px 66px;
-  background-position: 0 center;
-  animation: sine-slide 10s linear infinite;
 }
 
-@keyframes sine-slide {
-  from {
-    background-position: 0 center;
-  }
-  to {
-    background-position: 300px center;
-  }
+.sine {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  stroke-width: 2;
+  stroke: var(--greyLight);
+  overflow: visible;
 }
 
 .now-playing-wrapper {}

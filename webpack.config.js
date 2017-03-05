@@ -8,7 +8,6 @@ const cssFunctions = require('postcss-functions');
 const cssExtend = require('postcss-extend');
 const cssNext = require('postcss-cssnext');
 const lostGrid = require('lost');
-const inlineSVG = require('postcss-inline-svg');
 
 const TARGET = process.env.npm_lifecycle_event;
 
@@ -55,7 +54,6 @@ const common = {
       }),
       cssExtend(),
       cssNext(),
-      inlineSVG(),
       lostGrid(),
     ];
   },
