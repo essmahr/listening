@@ -11,9 +11,9 @@ export default class Explore extends React.Component {
       <nav className="menu-outer">
         <div className="menu">
           <IndexLink className="menu-link" activeClassName="active" to="/">Recent</IndexLink>
+          <Link className="menu-link" activeClassName="active" to="/artists">Artists</Link>
           <Link className="menu-link" activeClassName="active" to="/albums">Albums</Link>
           <Link className="menu-link" activeClassName="active" to="/tracks">Tracks</Link>
-          <Link className="menu-link" activeClassName="active" to="/artists">Artists</Link>
         </div>
       </nav>
     );
