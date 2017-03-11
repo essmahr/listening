@@ -60,7 +60,8 @@ const common = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.ejs',
-      inject: 'body'
+      inject: 'body',
+      hash: true,
     }),
     new webpack.ProvidePlugin({
       Promise: 'imports?this=>global!exports?global.Promise!es6-promise',

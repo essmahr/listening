@@ -20,9 +20,7 @@ function fetchRecentTracks(params) {
 export function loadRecentTracks(params = {}) {
   return (dispatch, getState) => {
     const loaded = getState().recentTracks.feed.length;
-    if (loaded) {
-      return null
-    }
+    if (loaded) return null;
 
     return dispatch(fetchRecentTracks(params));
   }
