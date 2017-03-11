@@ -5,7 +5,7 @@ export default class SineWave extends React.Component {
     super(props);
 
     // width of wave
-    this.frequency = 0.03;
+    this.frequency = 0.15;
 
     // speed of animation
     this.speed = 50;
@@ -40,19 +40,19 @@ export default class SineWave extends React.Component {
   }
 
   move(counter) {
-    const amplitude = this.state.height / 2;
+    const amplitude = this.state.height / 3;
     const points = [];
     let x = 0;
     let y;
 
     while (x++ <= this.state.width) {
-      // combine a bunch of sine waves together, moving in opposite directions
-      const y1 = Math.sin(-x * (this.frequency * 1.3) + counter);
-      const y2 = Math.sin(x * (this.frequency / 1.1) + counter);
-      const y3 = Math.sin(-x * (this.frequency * 1.5) + counter);
-      const y4 = Math.sin(x * (this.frequency / 1.6) + counter);
+      // combine a bunch of sine waves together
+      const y1 = Math.sin(-x * (this.frequency) + counter / 2);
+      const y2 = Math.sin(-x * (this.frequency * 1.25) + counter);
+      const y3 = Math.sin(-x * (this.frequency * 1.33) + counter);
+      const y4 = Math.sin(-x * (this.frequency * 1.5) + counter);
       y = (y1 + y2 + y3 + y4) / 4;
-      points.push([x, (y * amplitude * 0.75) + (amplitude)].join(' '));
+      points.push([x, (y * amplitude) + (amplitude * 1.5)].join(' '));
     }
 
     return points;
