@@ -7,8 +7,8 @@
 @custom-media --screenLargeUp (min-width: 740px);
 
 :root {
-  --titleFont: "Inknut Antiqua", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
-  --bodyFont: "Roboto Mono", monospace;
+  --titleFont: "Anton", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  --bodyFont: "Overpass Mono", monospace;
 
   --backgroundColor: #FFFFFF;
   --bodyColor: color(#F5F1EE shade(70%));

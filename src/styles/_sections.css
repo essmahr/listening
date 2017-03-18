@@ -25,8 +25,6 @@
 
 .section-title {
   font-family: var(--titleFont);
-  font-weight: 400;
-  letter-spacing: -0.02em;
   line-height: 1;
   color: var(--accent);
   font-size: calc(1em + 5vw);
@@ -82,7 +80,6 @@
   }
 
   &.active {
-    font-weight: 500;
     color: var(--accent);
   }
 

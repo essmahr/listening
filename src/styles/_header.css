@@ -45,8 +45,7 @@
 }
 
 .now-playing-title {
-  font-size: calc(1em * 22 / 16);
-  font-family: var(--titleFont);
+  @extend %header-2;
   margin: 6px 0;
 }
 
@@ -82,7 +81,6 @@
 
   &.active {
     color: var(--accent);
-    font-weight: 500;
     background-color: var(--greyLight);
   }
 

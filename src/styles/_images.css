@@ -47,7 +47,6 @@
   margin-top: rem(-24);
   text-align: center;
   color: #FFF;
-  font-weight: 400;
 
   @nest .no-image & {
     color: inherit;
