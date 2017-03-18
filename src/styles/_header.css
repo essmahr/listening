@@ -46,7 +46,7 @@
 
 .now-playing-title {
   @extend %header-2;
-  margin: 6px 0;
+  margin: 6px 0 8px;
 }
 
 .now-playing-artist {}
