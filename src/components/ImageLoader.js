@@ -7,6 +7,7 @@ class ImageLoader extends React.Component {
     super(props);
 
     const imgLoaded = this.isImgCached();
+    this.onImgLoad = this.onImgLoad.bind(this);
 
     this.state = {
       imgLoaded,
@@ -29,7 +30,7 @@ class ImageLoader extends React.Component {
 
   isInViewport() {
     var rect = this.el.getBoundingClientRect();
-    return (rect.bottom - 20) <= (window.innerHeight || document.documentElement.clientHeight);
+    return (rect.bottom - 100) <= (window.innerHeight || document.documentElement.clientHeight);
   }
 
   checkVisibility() {
@@ -44,8 +45,8 @@ class ImageLoader extends React.Component {
     if (!this.el || !this.props.imgSrc) return;
 
     const onScroll = debounce(() => {
-      this.checkVisibility()
-    }, 100);
+      this.checkVisibility();
+    }, 50);
 
     window.addEventListener('scroll', onScroll);
 
@@ -53,13 +54,11 @@ class ImageLoader extends React.Component {
       window.removeEventListener('scroll', onScroll);
     }
 
-    onScroll();
+    this.checkVisibility();
   }
 
   componentWillUnmount() {
-    if (this.onUnMount) {
-      this.onUnMount();
-    }
+    if (this.onUnMount) this.onUnMount();
   }
 
   render() {
@@ -70,8 +69,8 @@ class ImageLoader extends React.Component {
     })
 
     return (
-      <div className={classes} ref={(el) => this.el = el}>
-        {this.props.imgSrc ? <img className="img-loader-img" src={this.state.imgSrc} onLoad={this.onImgLoad.bind(this)} /> : null}
+      <div className={classes} ref={el => this.el = el}>
+        {this.props.imgSrc ? <img className="img-loader-img" src={this.state.imgSrc} onLoad={this.onImgLoad} /> : null}
         {this.props.children}
       </div>
     );
