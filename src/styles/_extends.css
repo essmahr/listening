@@ -35,11 +35,11 @@
 
 %outer-padding {
   max-width: rem(1100);
-  padding: 0 20px;
+  padding: 0 14px;
   margin: 0 auto;
 
   @media (--screenMediumUp) {
-    padding: 0 30px;
+    padding: 0 20px;
   }
 
   @media (--screenLargeUp) {
