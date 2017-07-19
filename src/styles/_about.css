@@ -22,10 +22,8 @@
 }
 
 .about-launch {
-  top: rem(12, 14);
-  right: rem(12, 14);
   background: none;
-  padding: 0;
+  padding: rem(10, 14) rem(14, 14);
   border: 0;
   line-height: rem(14, 14);
   color: inherit;
@@ -69,7 +67,7 @@
     }
   }
 
-  & .lower {
+  .lower {
     margin-top: rem(60, 11);
     font-style: italic;
 
