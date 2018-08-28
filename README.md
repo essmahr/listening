@@ -7,14 +7,11 @@ My starting point for this was the "[real world](https://github.com/reactjs/redu
 
 ## Configuration
 
-Add a `./config.js` that exports your last.fm username and an [API Key](http://www.last.fm/api/account/create) like so:
+Add a `.env` that exports your last.fm username and an [API Key](http://www.last.fm/api/account/create) like so:
 
 ```
-module.exports = {
-  lastfmUser: 'username',
-  lastfmApiKey: 'api_key',
-  googleAnalyticsKey: 'your_key'
-}
+LASTFM_USER='username'
+LASTFM_API_KEY='12345'
 ```
 
 An analytics key is required, but only for production builds (`npm build`)

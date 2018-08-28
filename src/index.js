@@ -10,6 +10,8 @@ const css = require('./styles/app');
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
+console.log(process.env);
+
 render(
   <Root store={store} history={history} />,
   document.getElementById('root')

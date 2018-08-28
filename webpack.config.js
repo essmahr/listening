@@ -1,3 +1,4 @@
+const config = require('dotenv').config();
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -66,7 +67,14 @@ const common = {
     new webpack.ProvidePlugin({
       Promise: 'imports?this=>global!exports?global.Promise!es6-promise',
       fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-    })
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        'LASTFM_API_KEY': JSON.stringify(process.env.LASTFM_API_KEY),
+        'LASTFM_USER': JSON.stringify(process.env.LASTFM_USER)
+      }
+    }),
   ],
 };
 
@@ -118,11 +126,6 @@ if (TARGET === 'build') {
     plugins: [
       new webpack.optimize.OccurenceOrderPlugin(),
       new webpack.optimize.DedupePlugin(),
-      new webpack.DefinePlugin({
-        'process.env': {
-          'NODE_ENV': JSON.stringify('production')
-        }
-      }),
       new webpack.optimize.UglifyJsPlugin({
         compressor: {
           warnings: false
