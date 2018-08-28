@@ -1,7 +1,7 @@
 import React from 'react';
 import scrollTo from '../lib/scrollTo';
 
-export default function LoadMoreButton(props) {
+const LoadMoreButton = function(props) {
   function toTop() {
     scrollTo(document.body, 0, 300);
   }
