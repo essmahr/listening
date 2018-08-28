@@ -3,9 +3,8 @@ import { Provider } from 'react-redux';
 import routes from '../routes';
 import { Router } from 'react-router';
 import ga from 'react-ga';
-import { googleAnalyticsKey } from '../../config.js'
 
-ga.initialize(googleAnalyticsKey);
+ga.initialize(process.env.GA_KEY);
 
 function logPageView() {
   ga.pageview(window.location.pathname);

@@ -72,7 +72,8 @@ const common = {
       'process.env': {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
         'LASTFM_API_KEY': JSON.stringify(process.env.LASTFM_API_KEY),
-        'LASTFM_USER': JSON.stringify(process.env.LASTFM_USER)
+        'LASTFM_USER': JSON.stringify(process.env.LASTFM_USER),
+        'GA_KEY': JSON.stringify(process.env.GA_KEY),
       }
     }),
   ],
