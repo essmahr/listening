@@ -1,6 +1,6 @@
 const API_KEY = process.env.LASTFM_API_KEY;
 const USERNAME = process.env.LASTFM_USER;
-const API_ROOT = `http://ws.audioscrobbler.com/2.0/?format=json&api_key=${API_KEY}&extended=1&user=${USERNAME}&method=`;
+const API_ROOT = `https://ws.audioscrobbler.com/2.0/?format=json&api_key=${API_KEY}&extended=1&user=${USERNAME}&method=`;
 
 // better key naming
 const periodMap = {
