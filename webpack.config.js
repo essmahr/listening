@@ -1,8 +1,9 @@
-const config = require('dotenv').config();
+require('dotenv').config();
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const merge = require('webpack-merge');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const postcssImport = require('postcss-import');
 const cssFunctions = require('postcss-functions');
@@ -127,6 +128,9 @@ if (TARGET === 'build') {
     plugins: [
       new webpack.optimize.OccurenceOrderPlugin(),
       new webpack.optimize.DedupePlugin(),
+      new CopyWebpackPlugin([
+        { from: '_redirects', to: PATHS.build}
+      ]),
       new webpack.optimize.UglifyJsPlugin({
         compressor: {
           warnings: false
