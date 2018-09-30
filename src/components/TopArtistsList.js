@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TopArtistsListItem from './TopArtistsListItem';
 
 class TopArtistsList extends React.Component {
@@ -32,7 +33,7 @@ class TopArtistsList extends React.Component {
 }
 
 TopArtistsList.propTypes = {
-  artists: React.PropTypes.array
+  artists: PropTypes.array
 }
 
 export default TopArtistsList;

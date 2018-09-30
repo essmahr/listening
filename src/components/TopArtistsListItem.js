@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ImageLoader from './ImageLoader';
 import playCount from '../lib/playCount';
 
@@ -34,9 +35,9 @@ class TopArtistsListItem extends React.Component {
 }
 
 TopArtistsListItem.proptypes = {
-  name: React.PropTypes.string.isRequired,
-  rank: React.PropTypes.string.isRequired,
-  count: React.PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  rank: PropTypes.string.isRequired,
+  count: PropTypes.string.isRequired,
 }
 
 export default TopArtistsListItem;

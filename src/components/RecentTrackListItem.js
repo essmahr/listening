@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import smarten from '../lib/smarten';
 import timeAgo from '../lib/timeAgo';
 import dateFormat from 'dateformat';
@@ -42,9 +43,9 @@ class RecentTrackListItem extends React.Component {
 }
 
 RecentTrackListItem.proptypes = {
-  artist: React.PropTypes.string,
-  album: React.PropTypes.object,
-  date: React.PropTypes.string,
+  artist: PropTypes.string,
+  album: PropTypes.object,
+  date: PropTypes.string,
 }
 
 export default RecentTrackListItem;

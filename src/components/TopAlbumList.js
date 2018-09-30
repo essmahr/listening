@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import AlbumListItem from './TopAlbumListItem';
 
@@ -32,7 +33,7 @@ class AlbumList extends React.Component {
 }
 
 AlbumList.propTypes = {
-  albums: React.PropTypes.array
+  albums: PropTypes.array
 }
 
 export default AlbumList;

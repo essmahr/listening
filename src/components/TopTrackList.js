@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import TopTrackListItem from './TopTrackListItem';
 
@@ -32,7 +33,7 @@ class TopTrackList extends React.Component {
 }
 
 TopTrackList.propTypes = {
-  tracks: React.PropTypes.array
+  tracks: PropTypes.array
 }
 
 export default TopTrackList;
