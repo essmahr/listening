@@ -54,7 +54,6 @@
     "redux": "^3.3.1",
     "redux-logger": "^2.4.0",
     "redux-thunk": "^1.0.3",
-    "rsync": "^0.4.0",
     "whatwg-fetch": "^0.11.1"
   }
 }

@@ -19,7 +19,7 @@ class Header extends React.Component {
     return (
       <header className="site-header">
         {this.props.nowPlaying ? <NowPlaying track={this.props.nowPlaying}/> : null}
-        <Menu />
+        <Menu location={this.props.location} />
       </header>
     );
   }
@@ -31,6 +31,7 @@ function mapStateToProps(state) {
   const latestTrack = state.recentTracks.feed[0];
   const nowPlaying = latestTrack['@attr'] !== undefined && latestTrack['@attr'].nowplaying;
   return {
+    location: state.routing.locationBeforeTransitions.pathname,
     nowPlaying: nowPlaying ? latestTrack : false
   }
 };

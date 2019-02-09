@@ -2,10 +2,6 @@ import React from 'react';
 import { Link, IndexLink } from 'react-router';
 
 export default class Explore extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <nav className="menu-outer">
