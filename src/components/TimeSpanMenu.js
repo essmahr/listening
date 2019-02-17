@@ -19,13 +19,6 @@ class TimeSpanButton extends React.Component {
 }
 
 class TimeSpanMenu extends React.Component {
-  timespans = {
-    week: "Past Week",
-    month: "Past Month",
-    year: "Past Year",
-    allTime: "All-Time",
-  };
-
   onClick(span) {
     this.props.changeTimeSpan(span);
   }
