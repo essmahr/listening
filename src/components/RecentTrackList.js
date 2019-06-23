@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import RecentTrackListItem from './RecentTrackListItem';
 
 class RecentTrackList extends React.Component {
@@ -34,7 +35,7 @@ class RecentTrackList extends React.Component {
 }
 
 RecentTrackList.propTypes = {
-  tracks: React.PropTypes.array
+  tracks: PropTypes.array
 }
 
 export default RecentTrackList;

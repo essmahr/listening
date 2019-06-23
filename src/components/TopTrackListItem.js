@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import playCount from '../lib/playCount';
 
 class TrackListItem extends React.Component {
@@ -36,11 +37,11 @@ class TrackListItem extends React.Component {
 }
 
 TrackListItem.proptypes = {
-  track: React.PropTypes.string,
-  artist: React.PropTypes.string,
-  album: React.PropTypes.object,
-  count: React.PropTypes.string,
-  rank: React.PropTypes.string,
+  track: PropTypes.string,
+  artist: PropTypes.string,
+  album: PropTypes.object,
+  count: PropTypes.string,
+  rank: PropTypes.string,
 }
 
 export default TrackListItem;

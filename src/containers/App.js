@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import Header from '../containers/Header';
 import About from '../components/About';
 import LoaderWrapper from '../components/LoaderWrapper';
@@ -20,7 +21,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  children: React.PropTypes.node
+  children: PropTypes.node
 };
 
 export default App;

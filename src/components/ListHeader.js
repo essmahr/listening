@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TimeSpanMenu from './TimeSpanMenu';
 
 class ListHeader extends React.Component {
@@ -13,7 +14,7 @@ class ListHeader extends React.Component {
 }
 
 ListHeader.propTypes = {
-  title: React.PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 }
 
 export default ListHeader;

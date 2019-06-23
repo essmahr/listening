@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import debounce from 'lodash/debounce';
 
@@ -78,8 +79,8 @@ class ImageLoader extends React.Component {
 }
 
 ImageLoader.propTypes = {
-  className: React.PropTypes.string,
-  imgSrc: React.PropTypes.string,
+  className: PropTypes.string,
+  imgSrc: PropTypes.string,
 };
 
 export default ImageLoader;
